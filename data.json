@@ -1,0 +1,242 @@
+{
+    "destinos": [{
+        "nombre": "Latacunga",
+        "ruta": "RUTA DE LAS IGLESIAS",
+        "atractivos": [{
+                "id": 5,
+                "atractivo": "Iglesia del Salto",
+                "longitud": -78.6155400,
+                "latitud": -0.9352100,
+                "altura": 2750,
+                "provincia": "Cotopaxi",
+                "ciudad": "Latacunga",
+                "sector": "El salto, Av. Juan Abel Echeverría y Antonio Clavijo",
+                "descripcion": "La Iglesia del Salto construida en 1768, tiene su origen en el cráter volcánico del Asiento de Latacunga él cual, transformando en violentas inundaciones de lodo y materiales del Cotopaxi, arrasaron sistemáticamente la ciudad entre los siglos XVII y XIX, la tradición señala a una acción milagrosa, como el punto de inicio de una advocación a la Virgen, y consecuentemente a la instalación de un sitio adecuado para tal fin. Así se procedió en la lógica de la religiosidad popular, a edificar en ese punto una modesta capilla denominada \"Nuestra Señora del Salto \", la que poco a poco se convirtió en sitio obligado de romería, cada 11 de enero los realiza en memoria de la peregrina del Salto, La virgen de El Salto está pintada en piedra, la pintura podría ser obra de Pedro Bedón miembro de la escuela quiteña, la Iglesia de la Virgen del Santo es una tradicional iglesia con dos torres frontales rematadas en cúpulas.",
+                "imagen": "latacunga-del-salto.png",
+                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-nuestra-senora-salto-a88796a99"
+            },
+            {
+                "id": 6,
+                "atractivo": "Iglesia la Catedral",
+                "longitud": -78.6155400,
+                "latitud": -0.9352100,
+                "altura": 2750,
+                "provincia": "Cotopaxi",
+                "ciudad": "Latacunga",
+                "sector": "Calles General Maldonado y Quito",
+                "descripcion": "La Catedral fue construida en la época colonial (1698-1757) y destruida por el terremoto de 1768. La nueva reconstruida data en 1830.  La construcción es de estilo románico, en su interior existe un altar trabajado en piedra pómez, posee obras artísticas e imágenes coloniales; en el torreón se aprecia un corrillón, conjunto de campanarios que anuncian las horas y las eucaristías realizadas. Es una de las edificaciones emblemáticas de la ciudad y representa el símbolo evidente de fe de los latacungueños, la Catedral fue el centro de la campaña de los Agustinos para el adoctrinamiento y la evangelización que cubrió sitios nativos como: Sigchos e Isinliví, Angamarca, Pangua, Poaló, Cusubamba, Salachí San Agustín del Callo y Barracas, La construcción de la Catedral descansa sobre un plano de tres naves en dirección norte–sur, sitio respetado hasta la actualidad, la Catedral fue edificada hacia occidente a partir de 1950. En el terremoto de 1797 se destruyó por completo y una nueva construcción surge a partir de 1850. En 1975 fue intervenida para realizar trabajos de restauración y ornamentación. La Catedral es un símbolo para los latacungueños pues representa la fé de un pueblo con historia y tradición. La construcción es de estilo románico, en su interior existe un altar trabajado en piedra pómez, posee obras artísticas e imágenes coloniales, esta es una de la iglesias más sobresaliente de la ciudad de Latacunga por su historia, infraestructura y leyendas con la que cuenta este atractivo, las actividades que se puede realizar dentro de ella únicamente es fotografía.",
+                "imagen": "latacunga-catedral.png",
+                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/catedral-latacunga-a230b2c9e"
+            },
+            {
+                "id": 7,
+                "atractivo": "Iglesia San Agustin",
+                "longitud": -78.6155400,
+                "latitud": -0.9352100,
+                "altura": 2750,
+                "provincia": "Cotopaxi",
+                "ciudad": "Latacunga",
+                "sector": "Calles Hnas. Páez y Quito",
+                "descripcion": "La iglesia provincial fue edificada en 1650, pero el terremoto de 1797 la destruyó por completo y un nuevo templo surgió a partir de 1850. La evangelización agustiniana cabrío los sitios nativos (antiguamente Panzaleos) de: Sigchos, Isinlibí, Angamarca, Pangua, Poaló, Pilaló, además Cusubamba, Salachi, San Agustín de Callo y Barrancas. La iglesia, centro de la campaña de evangelización y adoctrinamiento católico para la ciudad, pero lo más importante para las reducciones nativas, fue construida sobre un plano general de tres naves, en dirección de norte a sur, sitio respetado hasta la actualidad, como lo destaca Neptalí Zúñiga.La plaza donde se encuentra se denomina Abdón Calderón, pero hasta 1920 se le denominó Miguel Valverde.Esta iglesia no sólo es importante por su aspecto religioso y artístico, sino también por lo histórico;ya que en 1820, su convento estuvo ocupado por fuerzas militares españolas, sirviendo de cuartel a una fracción del batallón Los Andes.Su convento actual fue de estudios secundarios.La arquitectura de la iglesia muestra una influencia neoclásica al exhibir columnas circulares con capitel jónico con alquitrabe terminado en cornisa.La piedra pómez ha servido para informar de agilidad a las pilastras que soportan los arcos en los dos pisos.Esta iglesia no solo es importante por sus aspectos religioso y artístico, sino por lo histórico;ya que en 1820, su convento estuvo ocupado por fuerzas militares españolas, sirviendo de cuartel a una fracción del Batallón“ Los Andes”.Lugar este, en el que se dilucidó la Independencia de la ciudad el Once de Noviembre ",
+                "imagen": "latacunga-san-agustin.png",
+                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-san-agustin-ae2ad3278"
+            },
+            {
+                "id": 8,
+                "atractivo": "Iglesia San Francisco",
+                "longitud": -78.6155400,
+                "latitud": -0.9352100,
+                "altura": 2750,
+                "provincia": "Cotopaxi",
+                "ciudad": "Latacunga",
+                "sector": "Calles General Manuel Maldonado y Manual de Jesús Quijano y Ordóñez.",
+                "descripcion": "El templo de San Francisco de Latacunga fue construido a partir de los inicios del siglo XVII, dedicándole un sito especial para culto de la Inmaculada Concepción, cuya advocación se celebra cada 8 de diciembre de cada año. La orden franciscana logró que los vecinos de la villa como Don Francisco de Vélez o Don Diego Ruiz de Rojas, hicieran donaciones para la edificación de otras capillas, incluso para uso personal de sus prósperos fieles. En 1698 el templo y la capilla se vinieron abajo por causa del terremoto quedando en pie los cimientos originales y la cúpula reconstruida, 250 años después, el terremoto de la provincia de Tungurahua – Pelileo, destruyó el templo. Es testimonio de la fundación de la ciudad, está ubicado a 100 metros al oriente del Parque Central de Latacunga. De su construcción primitiva solo quedó su cúpula ovalada, restaurada hace 30 años en la década de los 60 del siglo. El material es de origen volcánico propio de la región, con un atractivo campanario con dinteles que descansan sobre pilares escalonados desde su base hasta la tercera parte de su estructura, donde está a la vista una gran campana de bronce antigua. La estructura reconstruida presenta un frontispicio de piedra de medianas dimensiones con una pequeña puerta de madera de doble hoja, apoyada en dos columnas sólidas de roca, construidas con bloques transversales; un ábside abierto y rectilíneo en la parte superior sustenta una torre de pequeñas dimensiones con un ábside circular con una serie de pequeñas ventanas y punta aguzada.",
+                "imagen": "latacunga-san-francisco.png",
+                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-san-francisco-latacunga-a8b65459f"
+            },
+            {
+                "id": 9,
+                "atractivo": "Iglesia San Sebastian",
+                "longitud": -78.6155400,
+                "latitud": -0.9352100,
+                "altura": 2750,
+                "provincia": "Cotopaxi",
+                "ciudad": "Latacunga",
+                "sector": "Calles Juan Abel Echeverría, Josefa Calixto Pino e Isla San Bartolomé",
+                "descripcion": "La Iglesia de San Sebastián fue construida por la congregación de los Dominicos en el año de 1561, fecha que ha podido ser confirmada gracias a una pila bautismal que data de 1570. La iglesia de San Sebastián de Latacunga tiene dos características que la hacen en cierta manera singular con respecto a otras iglesias de la ciudad. En primer lugar, no se encuentra en el área central del casco urbano, y en segundo término, su amplia plaza le concede una magnitud distintiva. El área de la iglesia también comprendía un terreno de una cuadra de longitud, contiguo a la zona del cementerio, todo esto circundado por tapiales. Un segundo evento natural de magnitud, el terremoto de Pelileo y Ambato de 1949, destruyó nuevamente la iglesia de San Sebastián. Su reconstrucción no involucró las antiguas paredes y techo original de paja se cambió por uno de teja. El primer templo fue construido por la congregación de los Dominicos en el año de 1561. Incluso existía una pileta bautismal que databa de 1570 y fue destruida en un terremoto aproximadamente en el siglo XVIII. Se realizó un inventario en al año de 1886 en donde se señala el deterioro de la iglesia. La nueva construcción se inicia a principios del siglo, con características arquitectónicas diferentes a las de otros templos. La primera es que no se encuentra en el casco urbano y en segundo término la amplia plaza le concede una magnitud distintiva, la iglesia de San Sebastián es única con respecto a otras de Latacunga.",
+                "imagen": "latacunga-san-sebastian.png",
+                "link": "https://ec.viajandox.com/latacunga/iglesia-de-san-sebastian-en-latacunga-A369"
+            },
+            {
+                "id": 10,
+                "atractivo": "Iglesia La Merced",
+                "longitud": -78.6155400,
+                "latitud": -0.9352100,
+                "altura": 2750,
+                "provincia": "Cotopaxi",
+                "ciudad": "Latacunga",
+                "sector": "Calles Juan Abel Echeverría, Manuel de Jesús Quijano y Ordóñez.",
+                "descripcion": "La iglesia de La Merced de Latacunga La iglesia fue construida en 1.800, tiene una característica que le concede una cierta jerarquía en el conjunto de las iglesias y capillas de la provincia de Cotopaxi. Es el sitio en el cual se encuentra la imagen de la Virgen Protectora de Latacunga. Está construido sobre un plano de cruz latina de una sola nave con dos cruceros, estructura que se destaca por la nave central, la cúpula en la parte central y el coro en la parte inferior. Para el control y el orden de la población nativa se pidió a Felipe IV en 1648, la autorización para establecer un convento formal de la Orden Religiosa de la Merced, para evangelizar a 15 pueblos indígenas y enseñar artes básicas. Al igual que en Quito la Virgen fue declarada Protectora de la ciudad por los milagros a ella atribuidos en calmar la furia del Volcán Cotopaxi durante varias erupciones; por ello, cada 24 de Septiembre se realiza una manifestación costumbrista en el teatro popular denominada Capitanía de la Mama Negra .El requerimiento de configurar una situación de orden, control, sobre la población nativa, condujo a que los vecinos de la población solicitaran en 1648 a Felipe IV, monarca español, la autorización de establecer un convento formal de la Orden de religiosos de La Merced, para evangelización formal de 15 pueblos indígenas.Ya que en Quito, frente a los graves eventos volcánicos sucedidos desde mediados del siglo XVII producidos por el Guagua Pichincha, se proclamó protectora de Latacunga.",
+                "imagen": "latacunga-la-merced.png",
+                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-merced-a0465c829"
+            },
+            {
+                "id": 11,
+                "atractivo": "Iglesia Santo domingo",
+                "longitud": -78.6155400,
+                "latitud": -0.9352100,
+                "altura": 2750,
+                "provincia": "Cotopaxi",
+                "ciudad": "Latacunga",
+                "sector": "Av. Juan Abel Echeverría.",
+                "descripcion": "Construida en los años 1634 y 1655. La edificación data del siglo XVII modificada en su forma original a causa de diferentes sismos ocurridos en la ciudad, tiene una fachada de columnas dóricas de fuste, el templo está construido sobre un plano de cruz latina, con su estilo románico, que destaca su estructura por la nave central y los brazos abovedados. El cuerpo superior de la nave tiene columnas de capitel jónico. El basamento es de piedra corrida, tienen una buena armonía entre las proporciones de altura y espacio, el templo en conjunto es un delirio de arte, al exterior existen dos torres campanarios con remate cupular. Al interior de la edificación se proyecta el bloque del convento con clavestros de dos pisos dispuestos en un cuadro con una pila y jardines al centro. La arquitectura urbanística de la ciudad, con estilos diversos y falta de definición de algunos, provoca un gran contraste con la arquitectura colonial, además de perdida física de los bienes inmuebles de periodos anteriores y su reemplazo por edificaciones desentonantes. El templo representa a la etapa de la conquista y evangelización de las órdenes religiosas de la sierra central y la etapa de la independencia. Levantada en los años 1634-35, originalmente tenía una sola torre y la forma de cruz, una capilla dedicada a nuestra señora del Rosario, patrona de los terremotos, la erigió en 1690 su devoto el general Luis Sotomayor y Pimentel, justamente esa edificación perdura como iglesia principal, los murales en los interiores fueron trabajadas por Enrique Mideros.",
+                "imagen": "latacunga-santo-domingo.png",
+                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-santo-domingo-a87a553f4"
+            }
+        ]
+    }, {
+        "nombre": "Ambato",
+        "ruta": "RUTA DEL CENTRO HISTÓRICO",
+        "atractivos": [{
+            "id": 12,
+            "atractivo": "Parque Montalvo",
+            "longitud": -78.6155400,
+            "latitud": -0.9352100,
+            "altura": 2750,
+            "provincia": "Tungurahua",
+            "ciudad": "Ambato",
+            "sector": "Calles Bolívar entre Castillo y Montalvo.",
+            "descripcion": "Parque Montalvo es el parque más representativo de Ambato, está situado en pleno centro de la ciudad, frente a la Catedral y a la Casa de Montalvo. Constituye un lugar de riqueza histórica y cultural ambateña. De arquitectura española, construido desde 1905 en el sitio de la Plaza Matriz en el gobierno de Eloy Alfaro, terminándose e inaugurándose en 1911. Construido en memoria del “Cervantes de América” Don Juan Montalvo. Los jardines se revisten con palmas y árboles de diversas especies botánicas, fue construido a partir de 1905 en el lugar que ocupaba la Plaza Mayor o Plaza Matriz. Para la construcción del parque el Gobierno de Eloy Alfaro, realizó un gran aporte. El parque Montalvo contrasta con el atractivo cultural de la iglesia de La Catedral, la Municipalidad de Ambato y La Casa del Portal. Monumento a Juan Montalvo: De cuerpo entero hecho en bronce, sobre un pedestal de mármol de estilo clásico. La estatua fue diseñada por el italiano Pietro Caputto y fue fundida en Italia. A los pies de la estatua se encuentra el genio de Montalvo, una estatua tallada en mármol. Este monumento perenniza la imagen del Cervantes de América, liberal, posee 8 puertas de ingreso, de las cuales 4 se encuentran ubicadas una en cada esquina, mientras que las restantes están a los costados, lo peculiar de estas puertas es que al ingresar usted se encontrará con una pequeña pileta representada por una bella mujer llevando en su cabeza una bandeja desde donde brota el agua, son piletas típicas italianas.",
+            "imagen": "ambato-parque-montalvo.png",
+            "link": "https://ambato.gob.ec/ruta-de-cultura"
+        }, {
+            "id": 13,
+            "atractivo": "Catedral",
+            "longitud": -78.6155400,
+            "latitud": -0.9352100,
+            "altura": 2750,
+            "provincia": "Tungurahua",
+            "ciudad": "Ambato",
+            "sector": "Calles Bolivar y Montalvo",
+            "descripcion": "Es el edificio más alto y representativo de la ciudad. Dentro y fuera de esta iglesia existen dos atractivos principales que son: los vitrales de los apóstoles de Jesús que se ubican en las cúpulas de la iglesia y las guardianas de este templo que son las palomas que con su acostumbrado gorjeo y su singular vuelo por dentro y fuera de la iglesia nos hace pensar que vigilan cada movimiento que se realiza. La Catedral de Ambato es uno de los lugares más visitados. Esta moderna edificación se destaca en el pasaje arquitectónico de la urbe por lo preciado de sus proporciones; es la iglesia más importante de los católicos. La Catedral se observa desde todos los rincones de la ciudad debido a su imponente cúpula, fue construida para reemplazar a la Iglesia Matriz de Ambato que fue seriamente afectada por el terremoto de 1949, La Catedral actual reemplazó a la Iglesia Matriz de Ambato que fue seriamente afectada por el terremoto de 1949, fue inaugurada el 12 de diciembre de 1954. La capilla original se construyó en 1698 cuando luego del terremoto la ciudad se asentó en ese lugar, fue un chozón grande con cubierta de paja y que poco a poco fue creciendo con las contribuciones de los priostes y las fiestas hasta ser reemplazada por otra iglesia en el mismo sitio en el que está la actual Catedral. La Capilla fue una edificación grande de tres naves, con arcos atrevidos y cúpula aurora, que como consecuencia del terrible terremoto en 1797.",
+            "imagen": "ambato-la-catedral.png",
+            "link": "https://ambato.gob.ec/ruta-de-cultura"
+        }, {
+            "id": 14,
+            "atractivo": "Casa Montalvo",
+            "longitud": -78.6155400,
+            "latitud": -0.9352100,
+            "altura": 2750,
+            "provincia": "Tungurahua",
+            "ciudad": "Ambato",
+            "sector": "Calles Bolivar y Montalvo",
+            "descripcion": "Casa de Montalvo se encuentra ubicada en el centro de Ambato, hoy está convertida en biblioteca y museo. Sus paredes son blancas con techado de teja. En esta casa nació Juan Montalvo un 13 de abril 1832. Fue diseñada por el arquitecto Jorge Mideros, levantada entre 1826 y 1827. Perteneció a la familia hasta 1880 siendo adquirida por José Rumazo, pero en 1897, con el triunfo de la Revolución de Alfaro es declarada Patrimonio Cultural. En 1988 pasa a ser museo y en 1989 adquiere personería jurídica desempeñándose como pilar de la cultura de Ambato hasta la actualidad. Como institución brinda asesoramiento a los maestros del país con el fin de lograr la difusión de la obra de Montalvo y su alcance. Trabaja también con niños y jóvenes pues el aporte filosófico, moral y cultural del Cervantes de América es inmenso. Consta de salas identificadas de la siguiente manera: Iconografía y objetos familiares, Sala familiar, El Ambato de antaño, manuscritos y prendas de vestir, Vida política de Montalvo y Personajes de la época, Producción literaria, periodística y Llegada de sus restos mortales a Ambato y por último la Sala de los destierros. Algunas de sus obras más importantes que se puede encontrar al interior de la casa son: Geometría Moral y El Buscapié,  que fueron escritas en su primer exilió que se realizó en Ipiales, Colombia. También se puede observar la obra celebre “Siete Tratados” por la que Juan Montalvo recibió elogios como el mejor escrito ambateño y ecuatoriano de los tiempos, servicio de salas.",
+            "imagen": "ambato-casa-montalvo.png",
+            "link": "https://ambato.gob.ec/ruta-de-cultura"
+        }, {
+            "id": 15,
+            "atractivo": "Mausoleo de Juan Montalvo ",
+            "longitud": -78.6155400,
+            "latitud": -0.9352100,
+            "altura": 2750,
+            "provincia": "Tungurahua",
+            "ciudad": "Ambato",
+            "sector": "Calles Bolivar y Montalvo",
+            "descripcion": "Edificio de arquitectura neoclásica en el cual se destacan los inmensos faroles y columnas de su fachada. El mausoleo, alberga un féretro con el cuerpo de Don Juan Montalvo, el mismo que fue disecado para ser exhibido y además recibe el mantenimiento respectivo para que se mantenga en buen estado. Está construido en piedra con trabajos alusivos a la Grecia Antigua y detalles que dejan entrever la presencia de la masonería pues es sabido que este gran escritor estaba relacionado con ella. Construido por el arquitecto Jorge Mideros (diseñó la Casa de Montalvo) entre 1930 y 1932. Está situado junto a la Casa de Montalvo. Desde el interior del Museo de Montalvo es posible acceder al mausoleo. Sin duda alguna, esta imponente construcción de corte helénico es uno de los edificios más notorios en el paisaje de la ciudad. Juan Montalvo nace en Ambato, Ecuador, el 13 de abril de 1832 y muere en París el 17 de enero de 1889. Siendo niño fue testigo de las intransigencias políticas al ver a su hermano y tío marchar al exilio. Cursó primero estudios en el Colegio de San Fernando (1846-1848) y luego en el Seminario de San Luis en Quito (1848-1851), donde obtuvo el título de Maestro en Filosofía. Inició también estudios de jurisprudencia en la Universidad de Quito sin llegar a terminarlos. En realidad, Montalvo es un autodidacta. Su formación se debe más a sus lecturas y su experiencia europea, primero como miembro de la legación diplomática en Roma (1856-1858) y luego en París (1858-1859).",
+            "imagen": "ambato-mausoleo-montalvo.png",
+            "link": "https://ambato.gob.ec/ruta-de-cultura"
+        }]
+    }, {
+        "nombre": "Riobamba",
+        "ruta": "RUTA DEL CENTRO HISTÓRICO",
+        "atractivos": [{
+            "id": 16,
+            "atractivo": "Parque Maldonado",
+            "longitud": -78.6155400,
+            "latitud": -0.9352100,
+            "altura": 2750,
+            "provincia": "Chimborazo",
+            "ciudad": "Riobamba",
+            "sector": "Calles Primera Constituyente entre 5 de Junio y Eugenio espejo",
+            "descripcion": "La construcción empezó en el año 1909, bajo la dirección del arquitecto italiano Francisco Manuel Durini y culminaron en junio de 1917. La Plaza Mayor de acuerdo a la costumbre de la época es la primera que trazaron los gestores de construcción de la nueva ciudad. Es el punto donde se encuentran, según la costumbre colonial, el poder político, religioso y aristocrático, pues en sus costados se encuentran la Catedral, el Palacio Municipal, la Gobernación y las viviendas de las familias más importantes de aquel tiempo. En 1885, esta Plaza se embellece de acuerdo a los gustos y preferencias de la época. En 1911 dos arquitectos italianos le dieron nuevas formas. El Municipio firmó con el arquitecto Durini la erección del monumento al sabio riobambeño Pedro Vicente Maldonado, el científico hispano más destacado de la Colonia. El Parque Maldonado se levanta sobre el punto histórico en el que se erigió la Nueva Riobamba, el 1 de abril de 1799. En el Parque Maldonado o Plaza Mayor de la Ciudad, hay bastante que ver y disfrutar. En este lugar se ubicó la Plaza Mayor, en donde se concentraban los poderes político, religioso y social. A partir de allí se trazaron las primeras manzanas del núcleo urbano y, en su entorno se construyeron las edificaciones más importantes de la Riobamba del Reasentamiento. En 1885 la plaza fue embellecida, de acuerdo a los criterios de la época. Monumento a Pedro Vicente Maldonado: El monumento al sabio riobambeño Pedro Vicente Maldonado, se levanta en el centro histórico de Riobamba.",
+            "imagen": "rio-parque.png",
+            "link": "https://riobamba.com.ec/es-ec/chimborazo/riobamba/parques-plazas/parque-maldonado-a9ae6db5a"
+        }, {
+            "id": 17,
+            "atractivo": "La Catedral",
+            "longitud": -78.6155400,
+            "latitud": -0.9352100,
+            "altura": 2750,
+            "provincia": "Chimborazo",
+            "ciudad": "Riobamba",
+            "sector": "Esta ubicada en las calles José Veloz y 5 de Junio, en pleno Centro Histórico de Riobamba",
+            "descripcion": "La fachada de la Catedral es una reliquia histórica, fue rescatada de los escombros de la antigua Riobamba, destruida en el terremoto de 1797. La fachada de La Catedral de Riobamba es una reliquia histórica, de estilo barroco mestizo. Construida en piedra calcárea blanca contiene relieves en los que están presentes expresiones aborígenes y españolas, escenas del viejo y nuevo testamento e iconografía religiosa. En 1810 el Doctor José María Freire, párroco de Riobamba, inicia los trabajos y termina la reconstrucción en 1835 y en 1865 se transforma en Catedral. Con el paso del tiempo, por las condiciones de los materiales y la falta de mantenimiento se destruyó el techo y partes de la fachada. Durante varios años, los católicos riobambeños y el obispo, Monseñor Leonidas Proaño, discutieron sobre la necesidad de reconstruir o levantar una nueva Catedral. La Facultad de Arquitectura de la Universidad Central de Quito, realizó los estudios e inició la reconstrucción con los planos del arquitecto riobambeño Carlos Velasco. La Catedral, no es monumental, pero es una joya de arte plateresco, obra magnífica de los artesanos indígenas y mestizos de la Colonia. Constituye para los riobambeños un eslabón entre el pasado, el presente y futuro. Es un símbolo de austeridad, de sencillez y a la vez de nobleza. El año 1966 la Facultad de Arquitectura de la Universidad Central realizó un estudio histórico y arquitectónico de la Catedral en el que se destacó el valor arquitectónico de este templo colonial, la iglesia se construyó después del terremoto, en el año l797.",
+            "imagen": "rio-catedral.png",
+            "link": "https://www.goraymi.com/es-ec/chimborazo/riobamba/iglesias-templos/catedral-riobamba-a8fe075a2"
+        }, {
+            "id": 18,
+            "atractivo": "Casa Museo Riobamba",
+            "longitud": -78.6155400,
+            "latitud": -0.9352100,
+            "altura": 2750,
+            "provincia": "Chimborazo",
+            "ciudad": "Riobamba",
+            "sector": "Primera Constituyente y Eugenio Espejo. ",
+            "descripcion": "El Museo de la Ciudad, es un espacio destinado a la exposición de muestras temporales y permanentes de fotografía, pintura, escultura y arte contemporáneo. Actualmente en la Casa Museo de Riobamba se presentan al público muestras artísticas de pintura, festivales de documentales y muestras permanentes para que el público pueda admirarlas y obtener información, con el fin de “Recuperar, difundir, educar y debatir las diversas manifestaciones que configuran la identidad riobambeña. En la Casa Museo existen salas para la exhibición de muestras temporales y permanentes, un teatrino que lleva el nombre del ilustre chimboracense Tomás Oleas Carrasco, historiador, compositor, cantautor, escritor y concejal de Riobamba; aulas para exposiciones orales, talleres y las oficinas de la Dirección de Cultura. Se encuentra ubicado en uno de los más sobrios y bellos conjuntos urbano-arquitectónicos, del más puro estilo republicano ecuatoriano, que testimonian el esplendor que la ciudad alcanzó durante la década de los veinte, en el siglo pasado. La Casa Museo fue construida en los años 1900 por la familia Costales Dávalos. En el año 1905 funcionó la Gobernación, época en la cual aún no se construía el Parque Maldonado que se encuentra actualmente frente al edificio Luego su hijo Francisco Costales que la vendió a Max Tomaselli y este a Doña Carmela León última propietaria del inmueble. La Casa Museo cuenta con amplios y elegantes espacios que se encuentran al servicio de la comunidad, además cumplen con el propósito de convertirse en salas adecuadas para la realización de encuentros destinados a las manifestaciones artísticas y exposiciones permanentes.",
+            "imagen": "rio-museo.png",
+            "link": "https://www.goraymi.com/es-ec/chimborazo/riobamba/iglesias-templos/catedral-riobamba-a8fe075a2"
+        }]
+    }, {
+        "nombre": "Baños",
+        "ruta": "RUTA DE LAS CASCADAS",
+        "atractivos": [{
+            "id": 1,
+            "atractivo": "La cascada de Agoyan",
+            "longitud": -78.6155400,
+            "latitud": -0.9352100,
+            "altura": 2750,
+            "provincia": "Tungurahua",
+            "ciudad": "Baños",
+            "sector": "Parroquia de Ulba",
+            "descripcion": "Esta cascada es un antiguo símbolo de la zona debido a que se forma de las aguas del río Pastaza el mismo que cae a unos 40 metros, brindando a sus visitantes un gran espectáculo natural. La fuerza de esta caída ha disminuido ya que las aguas de este río han sido empleadas por el Proyecto Hidroeléctrico Agoyán. En el recorrido para observar esta cascada, primero se encontrará con la Represa Hidroeléctrica Agoyán, en donde se forma una laguna artificial debido a que las compuertas de la represa están cerradas, pero cuando son abiertas brindan un gran espectáculo a visitantes, forma parte de la Ruta de las Cascadas de Baños de Agua Santa. Túneles: Junto a los túneles de ingreso a la Amazonía, encontramos este hermoso atractivo del desarrollo turístico. Represa del Agoyán: Se encuentra a 6 km de Baños. Es uno de los más importantes proyectos hidroeléctricos junto al de Paute Pisayambo, con los cuales forma parte del Sistema interconectado del país. Utiliza las aguas del río Pastaza mediante la represa de hormigón, que se encuentra 15 km aguas arriba de la cascada del Agoyán. La casa de máquinas queda a unos 8 metros de la cascada. Cascada Puerta del Cielo: Se halla a 1 km de los túneles de Agoyán, vía Baños-Puyo. Es muy admirada ya que sus aguas caen justo a la carretera donde transmiten autos, bicicletas, donde la gente disfruta de un hermoso y refrescante baño, es la más alta de los Andes ecuatorianos, a 7 km del centro de Baños.",
+            "imagen": "banos-cascada-agoyan.png",
+            "link": "https://www.goraymi.com/es-ec/tungurahua/banos-de-agua-santa/cascadas/cascada-agoyan-anye1mszv"
+        }, {
+            "id": 2,
+            "atractivo": "Manto de La novia",
+            "longitud": -78.6155400,
+            "latitud": -0.9352100,
+            "altura": 2750,
+            "provincia": "Tungurahua",
+            "ciudad": "Baños",
+            "sector": "La merced",
+            "descripcion": "Terminado su recorrido, esta cascada desemboca en el río Pastaza. Su nombre se debe a la dimensión que tiene, pero sobre todo a su color blanco que se asemeja al Velo de una Novia. Si prefiere puede bajar a mirarla más de cerca por un sendero que está a la vista para luego cruzar un puente colgante de más de 100 m de longitud que está sobre el río Pastaza, hasta llegar al pie de esta maravillosa cascada en donde se puede bañar, tomar fotografías y admirar el maravilloso paisaje. La cascada está dentro de la zona de amortiguamiento del Parque Nacional Llanganates, está en un área fuertemente colinada que desciende desde el Tungurahua a través de un estrecho valle, el cual termina abruptamente sobre el río Pastaza. Tarabita: La tarabita conduce a los turistas al otro lado del río Pastaza y presenciar de cerca la hermosa formación natural llamada Manto de la Novia. También se puede llegar a través de un sendero serpenteante; luego de 10 minutos de caminata se cruza un puente colgante y finalmente presenciar desde abajo la caída del agua. Puente Manto de Novia: Se encuentra ubicado sobre el río Pastaza, en el caserío Chinchín cerca de la cascada el Manto de la Novia. Sendero de los Contrabandistas: Este sendero tiene mucha historia, ya que en la antigüedad los contrabandistas de licor de caña que se producía en el Puyo, circulaban por este camino para huir de los guardas de estancos con quienes en ocasiones tenían enfrentamientos armados.",
+            "imagen": "banos-manto-de-la-novia.png",
+            "link": "https://www.goraymi.com/es-ec/tungurahua/banos-de-agua-santa/cascadas/cascada-manto-novia-a2mq79x7z"
+        }, {
+            "id": 3,
+            "atractivo": "Pailón del Diablo",
+            "longitud": -78.6155400,
+            "latitud": -0.9352100,
+            "altura": 2750,
+            "provincia": "Tungurahua",
+            "ciudad": "Baños",
+            "sector": "Rio verde",
+            "descripcion": "También conocida como Cascada de Río Verde, ya que es formada por el Rio Verde que tiene origen en los páramos de Los LLanganates. El agua es cristalina verdosa por los nutrientes naturales existentes, este río desemboca en el Río Pastaza al finalizar la cascada Pailón del Diablo. La temperatura del agua es de aproximadamente unos 23 ºC. Uno de los sitios turísticos más bellos en Baños de Agua Santa es el Pailón del Diablo que fue considerado por Yahoo en la lista de escaleras más fascinantes del mundo. Tanto para turistas nacionales como extranjeros esta es la cascada más impresionante de la región. Para visitarla solamente se necesita viajar por la carretera Baños - Puyo hasta la parroquia Río Verde. Es uno de los saltos más grandes del Ecuador con aproximadamente 80 metros de altura. Para observarla más de cerca debe descender por un sendero que se encuentra perfectamente señalizado, que a través de orquídeas, hortensias y vegetación semi-selvática, que llega hasta un puente colgante y luego se encontrará en el filo mismo de la cascada. En el borde de la cascada existe un mirador, desde donde la vista se pierde en la cubierta vegetal compuesta y bien representada en tres estratos: herbáceo, arbustivo y arbóreo. La cascada desciende a lo largo de una formación rocosa natural, la misma que es capaz de envolver en una densa nube de gotitas producto de la humedad. El nombre de “Pailón del Diablo”, se debe a la forma que tiene una roca de la cascada, haciéndola única.",
+            "imagen": "banos-pailon-del-diablo.png",
+            "link": "https://www.goraymi.com/es-ec/tungurahua/banos-de-agua-santa/cascadas/pailon-diablo-a8e036996"
+        }, {
+            "id": 4,
+            "atractivo": "Cascada de la virgen",
+            "longitud": -78.6155400,
+            "latitud": -0.9352100,
+            "altura": 2750,
+            "provincia": "Tungurahua",
+            "ciudad": "Baños",
+            "sector": "Centro de la Urbe de Baños",
+            "descripcion": "En este hermoso paraje, podemos degustar de aguas termales, como nace (no piscina) la llegada de torcazas en bandadas, plantas nativas y lo más importante conocer el lugar donde se apareció la santísima virgen de la cascada. La comunidad está en ceja de páramo sus aguas están a 10 grados de temperatura y se las utiliza como relajante nervioso en combinación con las termas que nacen a su costado. Es un paraje en el cual podemos disfrutar del frío andino con pajonales, montes propios del lugar, y el calor de la gente.  En la cascada se hace las peregrinaciones a la santísima virgen de la cascada. En este lugar podemos apreciar algunas especies de: arrayanes, yahuachi, yaluman, suros, helechos, hualicón, chilcas, falso laurel, yalte negro, cedro, encino, hoja blanca, guandera, colca, guayusa de monte, amarillo, motilón, porotón, entre otras especies. Aves: torcazas, gavilanes, tangaras, pava andina, loro alibronceado, cuco ardilla, lechuza, estrella coliblanca, inca pardo, carpinterito ventriamarillo, pinchaflor flanquiblanco, eufonia ventriblanca, piranga aliblanca, jilguero encapuchado, entre otras. Mamíferos: ratón de monte, guatusa negra, zorro de balsa, puerco espín, conejo de monte, cabeza de mate (eira barbara), tejón y mapache. Finca Bellavista: Es una propiedad que esta junto a la cabecera parroquia de Buenos aires, donde tenemos una casa para albergue, y comedor (casa azul) el terreno es con una pendiente pronunciada hay árboles nativos los cuales sirven de habitad para una gran variedad de orquídeas hay tres descansos en donde se puede hacer camping, este hermoso paraje, podemos degustar de aguas termales únicas del lugar.",
+            "imagen": "banos-cascada-de-la-virgen.png",
+            "link": "https://www.goraymi.com/es-ec/tungurahua/banos-de-agua-santa/cascadas/cascada-virgen-a09dbb9d5"
+        }]
+    }]
+}
