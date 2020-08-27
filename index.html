@@ -8,10 +8,18 @@
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.72/Build/Cesium/Cesium.js"></script>
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.72/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <style>
         #cesiumContainer {
             width: 100%;
             height: 100%;
+        }
+        
+        #accordionExample {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 300px;
         }
     </style>
 </head>
@@ -24,6 +32,56 @@
         </button>
         <div id="cesiumContainer"></div>
 
+        <div class="accordion" id="accordionExample">
+            <div class="card" v-for="(destino, index) in destinosList">
+                <div class="card-header" :id="'heading-'+destino.slug">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" :data-target="'#containerDestino'+destino.slug" :aria-expanded="index==0?'true':'false'" :aria-controls="'#containerDestino'+destino.slug">
+                            {{destino.nombre}}
+                            <span @click="flyToDestino(index)" class="pull-right badge badge-success" :title="'Zoom hacia '+destino.nombre">
+                                <i class="fa fa-map-o"></i>
+                            </span>
+                        </button>
+                    </h2>
+                </div>
+
+                <div :id="'containerDestino'+destino.slug" :aria-labelledby="'heading-'+destino.slug" class="collapse" :class="index==0?'show':''" :aria-labelledby="destino.slug" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <h3 class="text-center">
+                            {{ destino.ruta }}
+                            <small class="pull-right badge badge-primary " :title="destino.atractivos.length+' atractivos'" v-text="destino.atractivos.length">
+                            </small>
+                        </h3>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" v-for="atractivo in destino.atractivos" :key="atractivo.id" @mouseover="atractivoHover(atractivo.id)" @mouseleave="atractivoLeave(atractivo.id)">
+                                {{atractivo.atractivo}}
+                                <button class="badge badge-primary badge-pill" title="Ver en mapa">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Pruebas
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" v-text="'Lat: '+lat">Cras justo odio</li>
+                            <li class="list-group-item" v-text="'Lng: '+lng">Cras justo odio</li>
+                            <li class="list-group-item" v-text="'Altura: '+altura">Cras justo odio</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="bienvenida" tabindex="-1" aria-labelledby="bienvenidaLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
@@ -35,7 +93,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <ul class="nav nav-tabs  nav-pills nav-justified" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="latacunga" aria-selected="true">Home</a>
                             </li>
@@ -157,6 +215,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </main>
     <script src="js/popper.min.js"></script>
     <script src="js/jquery.min.js"></script>

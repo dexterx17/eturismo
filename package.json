@@ -27,6 +27,7 @@
         "axios": "^0.20.0",
         "bootstrap": "^4.5.2",
         "cesium": "^1.72.0",
+        "fontawesome": "^5.6.3",
         "gul": "^1.0.0",
         "gulp-babel": "^8.0.0",
         "gulp-browserify": "^0.5.1",
