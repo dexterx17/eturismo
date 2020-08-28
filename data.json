@@ -4,14 +4,19 @@
         "slug": "latacunga",
         "ruta": "RUTA DE LAS IGLESIAS",
         "longitud": -78.617008,
-        "latitud": -0.9344428,
-        "altura": 5000,
+        "latitud": -0.9498550,
+        "altura": 3750,
+        "orientacion": {
+            "heading": 0,
+            "pitch": -35,
+            "roll": 0
+        },
         "atractivos": [{
                 "id": 5,
                 "atractivo": "Iglesia del Salto",
                 "longitud": -78.617008,
                 "latitud": -0.9344428,
-                "altura": 2770,
+                "altura": 2785,
                 "provincia": "Cotopaxi",
                 "ciudad": "Latacunga",
                 "sector": "El salto, Av. Juan Abel Echeverría y Antonio Clavijo",
@@ -24,7 +29,7 @@
                 "atractivo": "Iglesia la Catedral",
                 "longitud": -78.6155400,
                 "latitud": -0.9352100,
-                "altura": 2750,
+                "altura": 2785,
                 "provincia": "Cotopaxi",
                 "ciudad": "Latacunga",
                 "sector": "Calles General Maldonado y Quito",
@@ -103,8 +108,13 @@
         "slug": "ambato",
         "ruta": "RUTA DEL CENTRO HISTÓRICO",
         "longitud": -78.6314028,
-        "latitud": -1.2422388,
-        "altura": 2579,
+        "latitud": -1.2752388,
+        "altura": 4300,
+        "orientacion": {
+            "heading": 0,
+            "pitch": -35,
+            "roll": 0
+        },
         "atractivos": [{
             "id": 12,
             "atractivo": "Parque Montalvo",
@@ -161,6 +171,11 @@
         "longitud": -78.6482957,
         "latitud": -1.6727123,
         "altura": 2779,
+        "orientacion": {
+            "heading": 0,
+            "pitch": -35,
+            "roll": 0
+        },
         "atractivos": [{
             "id": 16,
             "atractivo": "Parque Maldonado",
@@ -205,6 +220,11 @@
         "longitud": -78.2982729,
         "latitud": -1.4041285,
         "altura": 1800,
+        "orientacion": {
+            "heading": 0,
+            "pitch": -35,
+            "roll": 0
+        },
         "atractivos": [{
             "id": 1,
             "atractivo": "La cascada de Agoyan",

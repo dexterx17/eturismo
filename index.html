@@ -55,7 +55,7 @@
                         <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center" v-for="atractivo in destino.atractivos" :key="atractivo.id" @mouseover="atractivoHover(atractivo.id)" @mouseleave="atractivoLeave(atractivo.id)">
                                 {{atractivo.atractivo}}
-                                <button class="badge badge-primary badge-pill" title="Ver en mapa">
+                                <button class="badge badge-primary badge-pill" @click="flyToAtractivo(atractivo)" title="Ver en mapa">
                                     <i class="fa fa-eye"></i>
                                 </button>
                             </li>
@@ -74,9 +74,13 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item" v-text="'Lat: '+lat">Cras justo odio</li>
-                            <li class="list-group-item" v-text="'Lng: '+lng">Cras justo odio</li>
-                            <li class="list-group-item" v-text="'Altura: '+altura">Cras justo odio</li>
+                            <li class="list-group-item" v-text="'Lat: '+lat">Latitud</li>
+                            <li class="list-group-item" v-text="'Lng: '+lng">Longitud</li>
+                            <li class="list-group-item" v-text="'Altura: '+altura">Altura</li>
+                            <li>ORIENTACIÓN</li>
+                            <li class="list-group-item" v-text="'Heading: '+heading">Heading</li>
+                            <li class="list-group-item" v-text="'Pitch: '+pitch">Pitch</li>
+                            <li class="list-group-item" v-text="'Roll: '+roll">Roll</li>
                         </ul>
                     </div>
                 </div>
@@ -112,11 +116,21 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="card">
+                                    <div class="card-body" style="min-height:250px;">
+                                        <!-- <babylon model="img/church.glb"></babylon> -->
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="latacunga" role="tabpanel" aria-labelledby="latacunga-tab">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h2 class="text-center" v-text="latacungaList.ruta"></h2>
+                                        <h2 class="text-center">
+                                            {{latacungaList.ruta}}
+                                            <span @click="flyToDestino(0,true)" class="pull-right badge badge-success" :title="'Zoom hacia '+latacungaList.nombre" data-toggle="collapse" :data-target="'#containerDestino'+latacungaList.slug" :aria-expanded="index==0?'true':'false'" :aria-controls="'#containerDestino'+latacungaList.slug">
+                                                <i class="fa fa-map-o"></i>
+                                            </span>
+                                        </h2>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
@@ -135,7 +149,12 @@
                             <div class="tab-pane fade" id="ambato" role="tabpanel" aria-labelledby="ambato-tab">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h2 class="text-center" v-text="ambatoList.ruta"></h2>
+                                        <h2 class="text-center">
+                                            {{ambatoList.ruta}}
+                                            <span @click="flyToDestino(1,true)" class="pull-right badge badge-success" :title="'Zoom hacia '+ambatoList.nombre" data-toggle="collapse" :data-target="'#containerDestino'+ambatoList.slug" :aria-expanded="index==0?'true':'false'" :aria-controls="'#containerDestino'+ambatoList.slug">
+                                                <i class="fa fa-map-o"></i>
+                                            </span>
+                                        </h2>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
@@ -163,7 +182,12 @@
                             <div class="tab-pane fade" id="riobamba" role="tabpanel" aria-labelledby="riobamba-tab">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h2 class="text-center" v-text="riobambaList.ruta"></h2>
+                                        <h2 class="text-center">
+                                            {{riobambaList.ruta}}
+                                            <span @click="flyToDestino(1,true)" class="pull-right badge badge-success" :title="'Zoom hacia '+riobambaList.nombre" data-toggle="collapse" :data-target="'#containerDestino'+riobambaList.slug" :aria-expanded="index==0?'true':'false'" :aria-controls="'#containerDestino'+riobambaList.slug">
+                                                <i class="fa fa-map-o"></i>
+                                            </span>
+                                        </h2>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
@@ -188,7 +212,12 @@
                             <div class="tab-pane fade" id="banos" role="tabpanel" aria-labelledby="banos-tab">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h2 class="text-center" v-text="banosList.ruta"></h2>
+                                        <h2 class="text-center">
+                                            {{banosList.ruta}}
+                                            <span @click="flyToDestino(1,true)" class="pull-right badge badge-success" :title="'Zoom hacia '+banosList.nombre" data-toggle="collapse" :data-target="'#containerDestino'+banosList.slug" :aria-expanded="index==0?'true':'false'" :aria-controls="'#containerDestino'+banosList.slug">
+                                                <i class="fa fa-map-o"></i>
+                                            </span>
+                                        </h2>
                                     </div>
                                     <div class="card-body">
                                         <div class="row row-cols-1 row-cols-md-2">
@@ -222,35 +251,10 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/vue.js"></script>
     <script src="js/axios.min.js"></script>
+    <!--<script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>-->
     <script src="js/app.js"></script>
     <script>
         $('#bienvenida').modal('show');
-
-        /*Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1NGU0MzhiZS1jOWMxLTRmZDEtODk0ZS00NjE1NDkzNTM2YWIiLCJpZCI6ODMzLCJpYXQiOjE1MjU5ODE3Mjd9.Wi5bheKDoVv0FU8HHgnf5w4XOjke2pXQFTlEBu27E-Q';
-        var viewer = new Cesium.Viewer('cesiumContainer');
-
-        var coords = {
-            latitude: -1.26037,
-            longitude: -78.615184
-        };
-        
-        var pinBuilder = new Cesium.PinBuilder();
-        viewer.camera.flyTo({
-            destination: Cesium.Cartesian3.fromDegrees(coords.longitude, coords.latitude, 500),
-            duration: 1,
-            complete: function() {
-                
-                var bluePin = viewer.entities.add({
-                    name: "Mi Ubicación",
-                    position: Cesium.Cartesian3.fromDegrees(coords.longitude, coords.latitude),
-                    billboard: {
-                        image: pinBuilder.fromColor(Cesium.Color.ROYALBLUE, 48).toDataURL(),
-                        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-                    },
-                });
-
-            }
-        });*/
     </script>
 </body>
 
