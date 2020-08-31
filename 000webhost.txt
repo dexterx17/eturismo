@@ -1,0 +1,9 @@
+SERVER
+https://www.000webhost.com/members/website/gozona3/files
+user: gozona3
+pass: @M(rl2M*m2&PeI8qj8!T
+
+WORDPRESS
+https://gozona3.000webhostapp.com/wp-admin
+user: admin
+pass: Vamos2020.

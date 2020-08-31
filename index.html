@@ -21,6 +21,15 @@
             left: 0;
             width: 300px;
         }
+        
+        #containerModel {
+            width: 300px;
+            height: 280px;
+        }
+        
+        .activable {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -33,19 +42,19 @@
         <div id="cesiumContainer"></div>
 
         <div class="accordion" id="accordionExample">
-            <div class="card" v-for="(destino, index) in destinosList">
+            <div class="card" v-for="destino in destinosList">
                 <div class="card-header" :id="'heading-'+destino.slug">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" :data-target="'#containerDestino'+destino.slug" :aria-expanded="index==0?'true':'false'" :aria-controls="'#containerDestino'+destino.slug">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" :data-target="'#containerDestino'+destino.slug" :aria-expanded="false" :aria-controls="'#containerDestino'+destino.slug">
                             {{destino.nombre}}
-                            <span @click="flyToDestino(index)" class="pull-right badge badge-success" :title="'Zoom hacia '+destino.nombre">
-                                <i class="fa fa-map-o"></i>
+                            <span @click="flyToDestino(destino)" class="pull-right badge badge-success" :title="'Zoom hacia '+destino.nombre">
+                                <i class="fa fa-map-o"></i> Mapa
                             </span>
                         </button>
                     </h2>
                 </div>
 
-                <div :id="'containerDestino'+destino.slug" :aria-labelledby="'heading-'+destino.slug" class="collapse" :class="index==0?'show':''" :aria-labelledby="destino.slug" data-parent="#accordionExample">
+                <div :id="'containerDestino'+destino.slug" :aria-labelledby="'heading-'+destino.slug" class="collapse" :aria-labelledby="destino.slug" data-parent="#accordionExample">
                     <div class="card-body">
                         <h3 class="text-center">
                             {{ destino.ruta }}
@@ -53,7 +62,7 @@
                             </small>
                         </h3>
                         <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center" v-for="atractivo in destino.atractivos" :key="atractivo.id" @mouseover="atractivoHover(atractivo.id)" @mouseleave="atractivoLeave(atractivo.id)">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" v-for="atractivo in destino.atractivos" :key="atractivo.id" @mouseover="atractivoHover(atractivo)" @mouseleave="atractivoLeave(atractivo)">
                                 {{atractivo.atractivo}}
                                 <button class="badge badge-primary badge-pill" @click="flyToAtractivo(atractivo)" title="Ver en mapa">
                                     <i class="fa fa-eye"></i>
@@ -85,6 +94,32 @@
                     </div>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Marcador
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><input type="number" @change="initMarker()" v-model="debugID" placeholder="ID"></li>
+                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.lat" placeholder="Latitud"></li>
+                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.lng" placeholder="Longitud"></li>
+                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.altura" placeholder="Altura"></li>
+                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.scale" placeholder="Escala"></li>
+                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.heading" placeholder="Heading"></li>
+                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.pitch" placeholder="Pitch"></li>
+                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.roll" placeholder="Roll"></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <button @click="updateMarker()">Test</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="bienvenida" tabindex="-1" aria-labelledby="bienvenidaLabel" aria-hidden="true">
@@ -101,101 +136,82 @@
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="latacunga" aria-selected="true">Home</a>
                             </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="latacunga-tab" data-toggle="tab" href="#latacunga" role="tab" aria-controls="latacunga" aria-selected="true">Latacunga</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="ambato-tab" data-toggle="tab" href="#ambato" role="tab" aria-controls="ambato" aria-selected="false">Ambato</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="riobamba-tab" data-toggle="tab" href="#riobamba" role="tab" aria-controls="riobamba" aria-selected="false">Riobamba</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="banos-tab" data-toggle="tab" href="#banos" role="tab" aria-controls="banos" aria-selected="false">Baños</a>
+                            <li class="nav-item" role="presentation" v-for="destino in destinosList">
+                                <a class="nav-link" :id="destino.slug+'-tab'" data-toggle="tab" :href="'#'+destino.slug" role="tab" :aria-controls="destino.slug" aria-selected="false" v-text="destino.nombre">Latacunga</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="card">
                                     <div class="card-body" style="min-height:250px;">
-                                        <!-- <babylon model="img/church.glb"></babylon> -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="latacunga" role="tabpanel" aria-labelledby="latacunga-tab">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h2 class="text-center">
-                                            {{latacungaList.ruta}}
-                                            <span @click="flyToDestino(0,true)" class="pull-right badge badge-success" :title="'Zoom hacia '+latacungaList.nombre" data-toggle="collapse" :data-target="'#containerDestino'+latacungaList.slug" :aria-expanded="index==0?'true':'false'" :aria-controls="'#containerDestino'+latacungaList.slug">
-                                                <i class="fa fa-map-o"></i>
-                                            </span>
-                                        </h2>
-                                    </div>
-                                    <div class="card-body">
                                         <div class="row">
-                                            <div class="col-lg-4 text-center" v-for="destino in latacungaList.atractivos" :key="destino.id">
-                                                <a :href="destino.link" target="_blank" role="button">
-                                                    <img class="bd-placeholder-img rounded-circle " width="140" height="140" :src="'img/'+destino.imagen" :alt="destino.nombre">
-                                                </a>
-                                                <h2 v-text="destino.atractivo"></h2>
-                                                <p v-text="destino.descripcion.substr(0,255)" class="text-justify">.</p>
+                                            <div class="col-lg-12 col-sm-12 col-md-12">
+                                                <h2>Destinos de zona3</h2>
+                                                <p>
+                                                    Ofrecemos una guía de servicios de destinos turísticos de la zona 3 del Ecuador para los turistas de diferentes partes del mundo, donde podrás encontrar los cuatro destinos y/o ciudades dentro de la zona, ruta del tren, deportes de aventura y ademas de
+                                                    ello imponentes volcanes que conforman la cordillera de los andes.
+                                                </p>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
+                                        <div class="row mb-2">
+                                            <div class="col-md-6" v-for="d in destinosList" :id="'destino-'+d.slug">
+                                                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                    <div class="col p-4 d-flex flex-column position-static">
+                                                        <strong class="d-inline-block mb-2 text-primary" v-text="d.nombre">World</strong>
+                                                        <h3 class="mb-0" v-text="d.ruta">Featured post</h3>
+                                                        <div class="mb-1 text-muted" v-text="d.atractivos.length+' atractivos'"># atractivos</div>
+                                                        <a class="btn btn-secondary" data-toggle="tab" :href="'#'+d.slug">Ver detalles</a>
+                                                    </div>
+                                                    <div class="col-auto d-none d-lg-block">
+                                                        <img :src="'img/'+d.imagen" class="bd-placeholder-img" width="200" height="225" :alt="d.nombre">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                        <!-- <babylon model="img/church.glb" id="containerModel"></babylon> -->
+                                    </div>
+                                </div>
                             </div>
-                            <div class="tab-pane fade" id="ambato" role="tabpanel" aria-labelledby="ambato-tab">
+                            <div class="tab-pane fade" v-for="destino in destinosList" :id="destino.slug" role="tabpanel" :aria-labelledby="destino.slug+'-tab'">
                                 <div class="card">
                                     <div class="card-header">
                                         <h2 class="text-center">
-                                            {{ambatoList.ruta}}
-                                            <span @click="flyToDestino(1,true)" class="pull-right badge badge-success" :title="'Zoom hacia '+ambatoList.nombre" data-toggle="collapse" :data-target="'#containerDestino'+ambatoList.slug" :aria-expanded="index==0?'true':'false'" :aria-controls="'#containerDestino'+ambatoList.slug">
-                                                <i class="fa fa-map-o"></i>
+                                            {{destino.ruta}}
+                                            <span @click="flyToDestino(destino,true)" class="pull-right badge badge-success activable" :title="'Zoom hacia '+destino.nombre" data-toggle="collapse" :data-target="'#containerDestino'+destino.slug" aria-expanded="false" :aria-controls="'#containerDestino'+destino.slug">
+                                                <i class="fa fa-map-o"></i> Mapa
                                             </span>
                                         </h2>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-4" v-for="destino in ambatoList.atractivos" :key="destino.id">
+                                            <div class="col-lg-4 text-center" v-for="atractivo in destino.atractivos" :key="atractivo.id">
                                                 <div class="card mb-4 shadow-sm">
-                                                    <img :src="'img/'+destino.imagen" class="bd-placeholder-img card-img-top" width="100%" height="225" :alt="destino.atractivo">
+                                                    <img :src="'img/'+atractivo.imagen" class="bd-placeholder-img card-img-top" width="100%" height="225" :alt="atractivo.atractivo">
                                                     <div class="card-body">
-                                                        <a :href="destino.link" target="_blank" role="button">
-                                                            <h2 v-text="destino.atractivo" class="text-center"></h2>
+                                                        <a :href="atractivo.link" target="_blank" role="button">
+                                                            <h2 v-text="atractivo.atractivo" class="text-center"></h2>
                                                         </a>
-                                                        <p class="card-text text-justify" v-text="destino.descripcion.substr(0,255)"></p>
+                                                        <p class="card-text text-justify" v-text="atractivo.resumen"></p>
                                                         <div class="d-flex justify-content-between align-items-center">
                                                             <div class="btn-group">
-                                                                <a :href="destino.link" class="btn btn-sm btn-outline-secondary" target="_blank" role="button">Ver</a>
+                                                                <button @click="flyToAtractivo(atractivo,true)" class="btn btn-sm btn-outline-secondary" role="button">Ver en mapa</button>
                                                             </div>
-                                                            <small class="text-muted" v-text="destino.ciudad+' '+destino.provincia"></small>
+                                                            <small class="text-muted" v-text="atractivo.ciudad+' '+atractivo.provincia"></small>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="riobamba" role="tabpanel" aria-labelledby="riobamba-tab">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h2 class="text-center">
-                                            {{riobambaList.ruta}}
-                                            <span @click="flyToDestino(1,true)" class="pull-right badge badge-success" :title="'Zoom hacia '+riobambaList.nombre" data-toggle="collapse" :data-target="'#containerDestino'+riobambaList.slug" :aria-expanded="index==0?'true':'false'" :aria-controls="'#containerDestino'+riobambaList.slug">
-                                                <i class="fa fa-map-o"></i>
-                                            </span>
-                                        </h2>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-4" v-for="destino in riobambaList.atractivos" :key="destino.id">
-                                                <div class="card mb-4 shadow-sm">
+                                                <!-- CARD 1
+                                                    <a :href="atractivo.link" target="_blank" role="button">
+                                                    <img class="bd-placeholder-img rounded-circle " width="140" height="140" :src="'img/'+atractivo.imagen" :alt="atractivo.nombre">
+                                                </a>
+                                                <h2 v-text="atractivo.atractivo"></h2>
+                                                <p v-text="atractivo.resumen" class="text-justify">.</p>-->
+                                                <!-- CARD 2
+                                                    <div class="card mb-4 shadow-sm">
                                                     <img :src="'img/'+destino.imagen" class="bd-placeholder-img card-img-top" width="100%" height="225" :alt="destino.atractivo">
                                                     <div class="card-body">
-                                                        <p class="card-text text-justify" v-text="destino.descripcion.substr(0,255)"></p>
+                                                        <p class="card-text text-justify" v-text="destino.resumen"></p>
                                                         <div class="d-flex justify-content-between align-items-center">
                                                             <div class="btn-group">
                                                                 <a :href="destino.link" class="btn btn-sm btn-outline-secondary" target="_blank" role="button">Ver</a>
@@ -203,40 +219,27 @@
                                                             <small class="text-muted" v-text="destino.ciudad+' '+destino.provincia"></small>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="banos" role="tabpanel" aria-labelledby="banos-tab">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h2 class="text-center">
-                                            {{banosList.ruta}}
-                                            <span @click="flyToDestino(1,true)" class="pull-right badge badge-success" :title="'Zoom hacia '+banosList.nombre" data-toggle="collapse" :data-target="'#containerDestino'+banosList.slug" :aria-expanded="index==0?'true':'false'" :aria-controls="'#containerDestino'+banosList.slug">
-                                                <i class="fa fa-map-o"></i>
-                                            </span>
-                                        </h2>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row row-cols-1 row-cols-md-2">
-                                            <div class="col mb-4" v-for="destino in banosList.atractivos" :key="destino.id">
-                                                <div class="card">
-                                                    <!-- <img :src="'img/'+destino.imagen" class="card-img-top" width="100%" height="225" :alt="destino.atractivo"> -->
+                                                </div> -->
+                                                <!-- CARD 3
+                                                    <div class="card">
+                                                     <img :src="'img/'+destino.imagen" class="card-img-top" width="100%" height="225" :alt="destino.atractivo">
                                                     <img :src="'img/'+destino.imagen" class="card-img-top" :alt="destino.atractivo">
                                                     <div class="card-body">
                                                         <a :href="destino.link" target="_blank" role="button">
                                                             <h5 class="card-title" v-text="destino.atractivo"></h5>
                                                         </a>
-                                                        <p class="card-text" v-text="destino.descripcion.substr(0,255)"></p>
+                                                        <p class="card-text" v-text="destino.resumen"></p>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
+                                    <!--/card-body-->
                                 </div>
+                                <!--/card-->
+
                             </div>
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Explorar Mapa</button>
@@ -251,7 +254,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/vue.js"></script>
     <script src="js/axios.min.js"></script>
-    <!--<script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>-->
+    <script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/app.js"></script>
     <script>
         $('#bienvenida').modal('show');

@@ -45,6 +45,7 @@
         "popper": "^1.0.1",
         "popper.js": "^1.16.1",
         "save-dev": "0.0.1-security",
+        "sweetalert": "^2.1.2",
         "vue": "^2.6.12"
     },
     "devDependencies": {
