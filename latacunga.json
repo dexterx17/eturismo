@@ -1,11 +1,11 @@
 {
     "destinos": [{
-        "nombre": "MENKIPARE",
-        "slug": "menkipare",
-        "ruta": "Proyectos de MENKIPARE",
-        "imagen": "nenkipare.jpeg",
-        "longitud": -77.0157148,
-        "latitud": -1.0194293,
+        "nombre": "Latacunga",
+        "slug": "latacunga",
+        "ruta": "RUTA DE LAS IGLESIAS",
+        "imagen": "latacunga-catedral.png",
+        "longitud": -78.617008,
+        "latitud": -0.9498550,
         "altura": 3750,
         "orientacion": {
             "heading": 0,
@@ -21,7 +21,7 @@
                     "pitch": 0,
                     "roll": 0
                 },
-                "atractivo": "Viviendas",
+                "atractivo": "Iglesia del Salto",
                 "longitud": -78.617008,
                 "latitud": -0.9344428,
                 "altura": 2788,
@@ -42,7 +42,7 @@
                     "pitch": 0,
                     "roll": 0
                 },
-                "atractivo": "Aeropuerto",
+                "atractivo": "Iglesia la Catedral",
                 "longitud": -78.6155400,
                 "latitud": -0.9352100,
                 "altura": 2785,
@@ -63,7 +63,7 @@
                     "pitch": 0,
                     "roll": 0
                 },
-                "atractivo": "Puentes",
+                "atractivo": "Iglesia San Agustin",
                 "longitud": -78.6173728,
                 "latitud": -0.9363136,
                 "altura": 2785,
@@ -84,7 +84,7 @@
                     "pitch": 0,
                     "roll": 0
                 },
-                "atractivo": "Espacio Cubierto",
+                "atractivo": "Iglesia San Francisco",
                 "longitud": -78.6439287,
                 "latitud": -0.949523,
                 "altura": 2785,
@@ -161,10 +161,10 @@
             }
         ]
     }, {
-        "nombre": "Apaika",
-        "slug": "apaika",
-        "ruta": "Poryectos de Apaika",
-        "imagen": "apaika.jpeg",
+        "nombre": "Ambato",
+        "slug": "ambato",
+        "ruta": "RUTA DEL CENTRO HISTÓRICO",
+        "imagen": "ambato-la-catedral.png",
         "longitud": -78.6314028,
         "latitud": -1.2542388,
         "altura": 3400,
@@ -255,10 +255,10 @@
             "link": "https://ambato.gob.ec/ruta-de-cultura"
         }]
     }, {
-        "nombre": "Kewedi ono",
-        "slug": "Kewedi-ono",
-        "ruta": "PROYECTOS DE Kewedi ono",
-        "imagen": "Kewedi-ono.jpeg",
+        "nombre": "Riobamba",
+        "slug": "riobamba",
+        "ruta": "RUTA DEL CENTRO HISTÓRICO",
+        "imagen": "rio-catedral.png",
         "longitud": -78.6482957,
         "latitud": -1.6797123,
         "altura": 3200,
@@ -329,9 +329,9 @@
             "link": "https://www.goraymi.com/es-ec/chimborazo/riobamba/iglesias-templos/catedral-riobamba-a8fe075a2"
         }]
     }, {
-        "nombre": "Comunidad X",
-        "slug": "comunidad",
-        "ruta": "PROYECTOS DE COMUNIDAD",
+        "nombre": "Baños",
+        "slug": "banos",
+        "ruta": "RUTA DE LAS CASCADAS",
         "imagen": "banos-manto-de-la-novia.png",
         "longitud": -78.3782729,
         "latitud": -1.40841285,
