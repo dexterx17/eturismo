@@ -2,7 +2,7 @@ const app = new Vue({
     el: '#main',
     data: {
         baseUrl: 'http://eturismo.local/',
-        //baseUrl: 'http://jaime.santana.ec/eturismo/',
+        //baseUrl: 'http://wao.santana.ec/',
         data_url: 'data.json',
         data: {},
         destinosList: [],
