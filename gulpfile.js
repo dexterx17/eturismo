@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 var
     devBuild = true, // TRUE for development, FALSE for production
     source = "",
-    dest = "",
+    dest = "./",
     css = { in: source + 'node_modules/bootstrap/scss/bootstrap.scss',
         out: "css/",
         watch: [
@@ -67,6 +67,11 @@ gulp.task('js', function() {
 
     }
 });
+
+// gulp.task('copy-img', function() {
+//     return gulp.src('./data.json')
+//       .pipe(gulp.dest('./deploy/imgs'));
+// });
 
 gulp.task('browsersync', function() {
     browsersync(syncOpts);
