@@ -58,7 +58,7 @@
                     <div class="card-body">
                         <h3 class="text-center">
                             {{ destino.ruta }}
-                            <small class="pull-right badge badge-primary " :title="destino.atractivos.length+' obras'" v-text="destino.atractivos.length">
+                            <small class="pull-right badge badge-primary " :title="destino.atractivos.length+' proyectos'" v-text="destino.atractivos.length">
                             </small>
                         </h3>
                         <ul class="list-group">
@@ -105,18 +105,43 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><input type="number" @change="initMarker()" v-model="debugID" placeholder="ID"></li>
-                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.lat" placeholder="Latitud"></li>
-                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.lng" placeholder="Longitud"></li>
-                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.altura" placeholder="Altura"></li>
-                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.scale" placeholder="Escala"></li>
-                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.heading" placeholder="Heading"></li>
-                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.pitch" placeholder="Pitch"></li>
-                            <li class="list-group-item"><input type="number" @change="updateMarker()" v-model="markerPosition.roll" placeholder="Roll"></li>
+                            <li class="list-group-item">ID: <input type="number" @change="initMarker()" v-model="debugID" placeholder="ID"></li>
+                            <li class="list-group-item">Lat:<input type="number" @change="updateMarker()" v-model="markerPosition.lat" placeholder="Latitud"></li>
+                            <li class="list-group-item">Lng:<input type="number" @change="updateMarker()" v-model="markerPosition.lng" placeholder="Longitud"></li>
+                            <li class="list-group-item">Alt:<input type="number" @change="updateMarker()" v-model="markerPosition.altura" placeholder="Altura"></li>
+                            <li class="list-group-item">Scale:<input type="number" @change="updateMarker()" v-model="markerPosition.scale" placeholder="Escala"></li>
+                            <li class="list-group-item">Heading:<input type="number" @change="updateMarker()" v-model="markerPosition.heading" placeholder="Heading"></li>
+                            <li class="list-group-item">Pitch:<input type="number" @change="updateMarker()" v-model="markerPosition.pitch" placeholder="Pitch"></li>
+                            <li class="list-group-item">Roll:<input type="number" @change="updateMarker()" v-model="markerPosition.roll" placeholder="Roll"></li>
                         </ul>
                     </div>
                     <div class="card-footer">
                         <button @click="updateMarker()">Test</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingNine">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            Camera
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Lat:<input type="number" @change="updateCamera()" v-model="cameraPosition.lat" placeholder="Latitud"></li>
+                            <li class="list-group-item">Lng:<input type="number" @change="updateCamera()" v-model="cameraPosition.lng" placeholder="Longitud"></li>
+                            <li class="list-group-item">Alt:<input type="number" @change="updateCamera()" v-model="cameraPosition.altura" placeholder="Altura"></li>
+                            
+                            <li class="list-group-item">Heading:<input type="number" @change="updateCamera()" v-model="cameraPosition.heading" placeholder="Heading"></li>
+                            <li class="list-group-item">Pitch:<input type="number" @change="updateCamera()" v-model="cameraPosition.pitch" placeholder="Pitch"></li>
+                            <li class="list-group-item">Roll:<input type="number" @change="updateCamera()" v-model="cameraPosition.roll" placeholder="Roll"></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <button @click="updateCamera()">Test</button>
                     </div>
                 </div>
             </div>
@@ -134,7 +159,7 @@
                     <div class="modal-body">
                         <ul class="nav nav-tabs  nav-pills nav-justified" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="latacunga" aria-selected="true">Home</a>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="latacunga" aria-selected="true">Inicio</a>
                             </li>
                             <li class="nav-item" role="presentation" v-for="destino in destinosList">
                                 <a class="nav-link" :id="destino.slug+'-tab'" data-toggle="tab" :href="'#'+destino.slug" role="tab" :aria-controls="destino.slug" aria-selected="false" v-text="destino.nombre">Latacunga</a>
@@ -156,10 +181,10 @@
                                             <div class="col-md-6" v-for="d in destinosList" :id="'destino-'+d.slug">
                                                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                                                     <div class="col p-4 d-flex flex-column position-static">
-                                                        <strong class="d-inline-block mb-2 text-primary" v-text="d.nombre">World</strong>
+                                                        <a :href="'#'+d.slug"  data-toggle="tab" class="d-inline-block mb-2 text-primary" v-text="d.nombre">World</a>
                                                         <h3 class="mb-0" v-text="d.ruta">Featured post</h3>
-                                                        <div class="mb-1 text-muted" v-text="d.atractivos.length+' obras'"># obras</div>
-                                                        <a class="btn btn-secondary" data-toggle="tab" :href="'#'+d.slug">Ver detalles</a>
+                                                        <div class="mb-1 text-muted" v-text="d.atractivos.length+' proyectos'"># proyectos</div>
+                                                        <a class="btn btn-success" data-toggle="tab" :href="'#'+d.slug">Ver detalles</a>
                                                     </div>
                                                     <div class="col-auto d-none d-lg-block">
                                                         <img :src="'img/'+d.imagen" class="bd-placeholder-img" width="200" height="225" :alt="d.nombre">
@@ -194,9 +219,9 @@
                                                         <p class="card-text text-justify" v-text="atractivo.resumen"></p>
                                                         <div class="d-flex justify-content-between align-items-center">
                                                             <div class="btn-group">
-                                                                <button @click="flyToAtractivo(atractivo,true)" class="btn btn-sm btn-outline-secondary" role="button">Ver en mapa</button>
+                                                                <button @click="flyToAtractivo(atractivo,true)" class="btn btn-sm btn-outline-success" role="button">Ver en mapa</button>
                                                             </div>
-                                                            <small class="text-muted" v-text="atractivo.ciudad+' '+atractivo.provincia"></small>
+                                                            <small class="text-muted" v-text="atractivo.ciudad+' / '+atractivo.provincia"></small>
                                                         </div>
                                                     </div>
                                                 </div>

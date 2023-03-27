@@ -3,14 +3,14 @@
 Build single container
 ``` 
     docker build . -t node-wao
-    docker run -p 3000:3000 node-wao
+    docker run -t n-wao -p 3000:3000 node-wao 
 ```
+Access to container console
+``` docker exec -it n-wao bash ```
 
-Build orchest container
+
+Build orchest container (docker-compose.yaml)
 
 ``` 
     docker-compose up --build
 ```
-
-Access to container console
-``` docker exec node-wao bash ```

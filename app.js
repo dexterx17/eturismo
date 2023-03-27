@@ -1,7 +1,8 @@
 const app = new Vue({
     el: '#main',
     data: {
-        baseUrl: 'http://eturismo.local/',
+        baseUrl: 'http://localhost:3000/',
+        //baseUrl: 'http://eturismo.local/',
         //baseUrl: 'http://wao.santana.ec/',
         data_url: 'data.json',
         data: {},
@@ -13,7 +14,7 @@ const app = new Vue({
         viewer: null,
         pinBuilder: null,
         selectedEntity: null,
-        debugID: 17,
+        debugID: 16,
         //coordenadas mouse
         lat: 0,
         lng: 0,
@@ -30,13 +31,21 @@ const app = new Vue({
             pitch: 0,
             roll: 0,
             scale: 0
-        }
+        },
+        cameraPosition: {
+            lat: 0,
+            lng: 0,
+            altura: 0,
+            heading: 0,
+            pitch: 0,
+            roll: 0,
+        },
     },
     methods: {
-        loadData: function() {
+        loadData: function () {
             var me = this;
             var url = this.baseUrl + this.data_url;
-            axios.get(url).then(function(response) {
+            axios.get(url).then(function (response) {
                 me.data = response.data;
                 me.destinosList = me.data.destinos;
                 me.latacungaList = me.data.destinos[0];
@@ -46,11 +55,11 @@ const app = new Vue({
                 me.initMapa();
                 me.loadPlaces();
                 me.debugMode();
-            }).catch(function(error) {
+            }).catch(function (error) {
                 console.log(error);
             });
         },
-        initMapa: function() {
+        initMapa: function () {
             var me = this;
             Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1NGU0MzhiZS1jOWMxLTRmZDEtODk0ZS00NjE1NDkzNTM2YWIiLCJpZCI6ODMzLCJpYXQiOjE1MjU5ODE3Mjd9.Wi5bheKDoVv0FU8HHgnf5w4XOjke2pXQFTlEBu27E-Q';
             this.viewer = new Cesium.Viewer('cesiumContainer', {
@@ -66,7 +75,7 @@ const app = new Vue({
             };
 
         },
-        loadPlaces: function() {
+        loadPlaces: function () {
             var me = this;
             for (let index = 0; index < this.destinosList.length; index++) {
                 //for (let index = 0; index < 1; index++) {
@@ -106,7 +115,7 @@ const app = new Vue({
                         model: {
                             uri: 'models/' + a.model.url,
                             scale: a.model.scale
-                                // color: Cesium.Color.CHARTREUSE
+                            // color: Cesium.Color.CHARTREUSE
                         },
                         label: {
                             text: a.atractivo,
@@ -117,15 +126,15 @@ const app = new Vue({
                             translucencyByDistance: new Cesium.NearFarScalar(1.5e5, 1.0, 1.5e7, 0.0),
                             distanceDisplayCondition: new Cesium.DistanceDisplayCondition(500.0, 1500.0),
                             eyeOffset: new Cesium.Cartesian3(0, 0, -200)
-                                //pixeloffset : new Cesium.Cartesian2(500, 205),
-                                //scaleByDistance : new Cesium.NearFarScalar(1.5e2, 2.0, 1.5e7, 0.5)
-                                //pixelOffsetScaleByDistance : new Cesium.NearFarScalar(1.5e2, 3.0, 1.5e7, 0.5)
+                            //pixeloffset : new Cesium.Cartesian2(500, 205),
+                            //scaleByDistance : new Cesium.NearFarScalar(1.5e2, 2.0, 1.5e7, 0.5)
+                            //pixelOffsetScaleByDistance : new Cesium.NearFarScalar(1.5e2, 3.0, 1.5e7, 0.5)
                         }
                     });
                 }
             }
         },
-        initMarker() {},
+        initMarker() { },
         updateMarker() {
             var entidad = this.viewer.entities.getById(this.debugID);
             var heading = Cesium.Math.toRadians(this.markerPosition.heading);
@@ -146,11 +155,30 @@ const app = new Vue({
             //entidad.billboard.image = this.pinBuilder.fromColor(Cesium.Color.ROYALBLUE, 48).toDataURL();
             entidad.model.scale = this.markerPosition.scale;
         },
-        debugMode: function() {
+        updateCamera() {
+            var heading = Cesium.Math.toRadians(this.cameraPosition.heading);
+
+            var pitch = Cesium.Math.toRadians(this.cameraPosition.pitch);
+
+            var roll = Cesium.Math.toRadians(this.cameraPosition.roll);
+
+            var hpr = new Cesium.HeadingPitchRoll(heading, pitch, roll);
+            var punto = new Cesium.Cartesian3.fromDegrees(this.cameraPosition.lng, this.cameraPosition.lat, this.cameraPosition.altura);
+
+            var orientation = Cesium.Transforms.headingPitchRollQuaternion(punto, hpr);
+
+
+            console.log('updateCamera');
+            console.log(punto);
+            console.log(orientation);
+            this.viewer.camera.lookAt(punto, new Cesium.HeadingPitchRange(heading, pitch, this.cameraPosition.altura));
+            //this.viewer.camera.orientation = orientation;
+        },
+        debugMode: function () {
             var me = this;
             // Mouse over the globe to see the cartographic position
             var handler = new Cesium.ScreenSpaceEventHandler(me.viewer.scene.canvas);
-            handler.setInputAction(function(movement) {
+            handler.setInputAction(function (movement) {
                 var cartesian = me.viewer.camera.pickEllipsoid(movement.endPosition, me.viewer.scene.globe.ellipsoid);
                 if (cartesian) {
                     var cartographic = Cesium.Cartographic.fromCartesian(cartesian);
@@ -163,7 +191,7 @@ const app = new Vue({
             }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
 
             var handler = new Cesium.ScreenSpaceEventHandler(me.viewer.scene.canvas, false);
-            handler.setInputAction(function(movement) {
+            handler.setInputAction(function (movement) {
                 var ray = me.viewer.camera.getPickRay(movement.endPosition);
                 var position = me.viewer.scene.globe.pick(ray, me.viewer.scene);
                 if (Cesium.defined(position)) {
@@ -172,18 +200,21 @@ const app = new Vue({
                 }
             }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
 
-            me.viewer.camera.moveEnd.addEventListener(function() {
+            me.viewer.camera.moveEnd.addEventListener(function () {
                 console.log('END:')
-                    // the camera stopped moving
+                // the camera stopped moving
                 var deg = Math.round(Cesium.Math.toDegrees(me.viewer.camera.heading))
                 me.heading = deg;
+                me.cameraPosition.heading = deg;
                 var deg = Math.round(Cesium.Math.toDegrees(me.viewer.camera.pitch))
                 me.pitch = deg;
+                me.cameraPosition.pitch = deg;
                 var deg = Math.round(Cesium.Math.toDegrees(me.viewer.camera.roll))
                 me.roll = deg;
+                me.cameraPosition.roll = deg;
             });
         },
-        flyToDestino: function(destino, close = false) {
+        flyToDestino: function (destino, close = false) {
             if (close) {
                 $('#bienvenida').modal('hide');
             }
@@ -196,7 +227,7 @@ const app = new Vue({
                     roll: destino.orientacion.roll
                 },
                 duration: 5,
-                complete: function() {
+                complete: function () {
                     swal({
                         title: destino.ruta,
                         text: "Bienvenido a " + destino.nombre + '.',
@@ -204,8 +235,15 @@ const app = new Vue({
                     });
                 }
             });
+
+            this.cameraPosition.lat = destino.latitud
+            this.cameraPosition.lng = destino.longitud
+            this.cameraPosition.altura = destino.altura
+            this.cameraPosition.heading = destino.orientacion.heading
+            this.cameraPosition.pitch = destino.orientacion.pitch
+            this.cameraPosition.roll = destino.orientacion.roll
         },
-        flyToAtractivo: function(atractivo, close = false) {
+        flyToAtractivo: function (atractivo, close = false) {
             if (close) {
                 $('#bienvenida').modal('hide');
             }
@@ -215,7 +253,7 @@ const app = new Vue({
             this.viewer.camera.flyTo({
                 destination: Cesium.Cartesian3.fromDegrees(atractivo.longitud, atractivo.latitud, atractivo.altura + 500),
                 duration: 5,
-                complete: function() {
+                complete: function () {
 
                     me.viewer.zoomTo(entidad);
                     //var pickedFeature = me.viewer.scene.pick(entidad.position);
@@ -234,7 +272,7 @@ const app = new Vue({
             this.markerPosition.altura = atractivo.altura;
             this.markerPosition.scale = atractivo.model.scale;
         },
-        atractivoHover: function(atractivo) {
+        atractivoHover: function (atractivo) {
             var entidad = this.viewer.entities.getById(atractivo.id);
 
             //console.log(entidad);
@@ -248,7 +286,7 @@ const app = new Vue({
             //entidad.model.color = Cesium.Color.FUCHSIA;
 
         },
-        atractivoLeave: function(atractivo) {
+        atractivoLeave: function (atractivo) {
             var entidad = this.viewer.entities.getById(atractivo.id);
 
             //entidad.billboard.image = this.pinBuilder.fromColor(Cesium.Color.ROYALBLUE, 48).toDataURL();
