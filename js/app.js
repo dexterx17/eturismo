@@ -1,7 +1,7 @@
 const app = new Vue({
     el: '#main',
     data: {
-        baseUrl: 'http://localhost:3000/',
+        baseUrl: 'http://localhost:3001/',
         //baseUrl: 'http://eturismo.local/',
         //baseUrl: 'http://wao.santana.ec/',
         data_url: 'data.json',
@@ -60,6 +60,7 @@ const app = new Vue({
                 me.initMapa();
                 me.loadPlaces();
                 me.debugMode();
+                
             }).catch(function (error) {
                 console.log(error);
             });

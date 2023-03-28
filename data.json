@@ -4,6 +4,7 @@
         "slug": "Nenkipare",
         "ruta": "Comunidad de NENKIPARE",
         "imagen": "nenkipare.jpeg",
+        "model": "ONGUIMENO.glb",
         "beneficiados": 500,
         "longitud": -77.011694584096,
         "latitud": -1.02219706401149,
@@ -22,16 +23,17 @@
                     "pitch": 0,
                     "roll": 0
                 },
-                "atractivo": "Vivienda 1",
+                "atractivo": "Vivienda Modelo A",
                 "longitud": -77.0157148,
                 "latitud": -1.0194293,
                 "altura": 289,
                 "provincia": "Napo",
                 "ciudad": "Nenkipare",
+                "presupuesto": "$ 0",
                 "sector": "Casas",
                 "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
                 "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
-                "imagen": "casa1.jpeg",
+                "imagen": "casaA1.jpeg",
                 "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-nuestra-senora-salto-a88796a99"
             },
             {
@@ -43,82 +45,41 @@
                     "pitch": 0,
                     "roll": 0
                 },
-                "atractivo": "Vivienda 2",
+                "atractivo": "Vivienda Modelo A",
                 "longitud": -77.0158548,
                 "latitud": -1.0194293,
                 "altura": 289,
                 "provincia": "Napo",
                 "ciudad": "Nenkipare",
                 "sector": "Casas",
+                "presupuesto": "$ 0",
                 "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
                 "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
-                "imagen": "casa1.jpeg",
+                "imagen": "casaA2.jpeg",
                 "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-nuestra-senora-salto-a88796a99"
             },
             {
-                "id": 6,
+                "id":100,
                 "model": {
-                    "url": "church.glb",
-                    "scale": 0.001,
+                    "url": "ONGUIMENO.glb",
+                    "scale": 1,
                     "heading": 180,
                     "pitch": 0,
                     "roll": 0
                 },
-                "atractivo": "Aeropuerto",
-                "longitud": -77.1336940278303,
-                "latitud": -1.01421831277141,
-                "altura": 2785,
+                "atractivo": "Vivienda Modelo A",
+                "longitud": -77.0158548,
+                "latitud": -1.0194293,
+                "altura": 289,
                 "provincia": "Napo",
                 "ciudad": "Nenkipare",
-                "sector": "Calles General Maldonado y Quito",
-                "descripcion": "Para facilitar el acceso a las comunidades de la zona, se ha propuesto construir un aeropuerto.",
-                "resumen": "Para facilitar el acceso a las comunidades de la zona, se ha propuesto construir un aeropuerto.",
-                "imagen": "latacunga-catedral.png",
-                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/catedral-latacunga-a230b2c9e"
-            },
-            {
-                "id": 7,
-                "model": {
-                    "url": "church.glb",
-                    "scale": 0.001,
-                    "heading": 180,
-                    "pitch": 0,
-                    "roll": 0
-                },
-                "atractivo": "Puentes",
-                "longitud": -78.6173728,
-                "latitud": -0.9363136,
-                "altura": 2785,
-                "provincia": "Napo",
-                "ciudad": "Nenkipare",
-                "sector": "Calles Hnas. Páez y Quito",
-                "descripcion": "Con el fin de mejorar la movilidad de los pobladores, se ha propuesta construir puentes colgantes.",
-                "resumen": "Con el fin de mejorar la movilidad de los pobladores, se ha propuesta construir puentes colgantes.",
-                "imagen": "latacunga-san-agustin.png",
-                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-san-agustin-ae2ad3278"
-            },
-            {
-                "id": 8,
-                "model": {
-                    "url": "church.glb",
-                    "scale": 0.001,
-                    "heading": 180,
-                    "pitch": 0,
-                    "roll": 0
-                },
-                "atractivo": "Espacio Cubierto",
-                "longitud": -78.6439287,
-                "latitud": -0.949523,
-                "altura": 2785,
-                "provincia": "Cotopaxi",
-                "ciudad": "Latacunga",
-                "sector": "Calles General Manuel Maldonado y Manual de Jesús Quijano y Ordóñez.",
-                "descripcion": "Con el objetivo de brindar un espacio de recreación adecuado para la socialización de los habitantes, se ha propuesto la construcción de un espacio cubierto",
-                "resumen": "Con el objetivo de brindar un espacio de recreación adecuado para la socialización de los habitantes, se ha propuesto la construcción de un espacio cubierto",
-                "imagen": "latacunga-san-francisco.png",
-                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-san-francisco-latacunga-a8b65459f"
-            }
-        ]
+                "sector": "Casas",
+                "presupuesto": "$ 0",
+                "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "imagen": "casaA3.jpeg",
+                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-nuestra-senora-salto-a88796a99"
+            }]
     }, {
         "nombre": "Apaika",
         "slug": "apaika",
@@ -142,16 +103,17 @@
                 "pitch": 0,
                 "roll": 0
             },
-            "atractivo": "Viviendas",
+            "atractivo": "Vivienda Modelo B",
             "longitud": -77.0684777929527,
             "latitud": 1.00403517145879,
             "altura": 305,
             "provincia": "Napo",
             "ciudad": "Apaika",
             "sector": "Casas",
+            "presupuesto": "$ 0",
             "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
             "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
-            "imagen": "casa2.jpeg",
+            "imagen": "casaB1.jpeg",
             "link": "https://ambato.gob.ec/ruta-de-cultura"
         },
     {
@@ -163,18 +125,40 @@
             "pitch": 0,
             "roll": 0
         },
-        "atractivo": "Puerto",
+        "atractivo": "Vivienda Modelo B",
         "longitud": -77.0683609274323,
         "latitud": -1.0038815428678,
         "altura": 275,
         "provincia": "Napo",
         "ciudad": "Apaika",
         "sector": "Casas",
+        "presupuesto": "$ 0",
         "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
         "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
-        "imagen": "casa2.jpeg",
+        "imagen": "casaB2.jpeg",
         "link": "https://ambato.gob.ec/ruta-de-cultura"
-    }]
+    },
+{
+    "id": 122,
+    "model": {
+        "url": "parque.glb",
+        "scale": 0.5,
+        "heading": 135,
+        "pitch": 0,
+        "roll": 0
+    },
+    "atractivo": "Vivienda Modelo B",
+    "longitud": -77.0683609274323,
+    "latitud": -1.0038815428678,
+    "altura": 275,
+    "provincia": "Napo",
+    "ciudad": "Apaika",
+    "sector": "Casas",
+    "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+    "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+    "imagen": "casaB3.jpeg",
+    "link": "https://ambato.gob.ec/ruta-de-cultura"
+}]
     }, {
         "nombre": "Keweriono",
         "slug": "Kewedi-ono",
@@ -198,16 +182,17 @@
                 "pitch": 0,
                 "roll": 0
             },
-            "atractivo": "Viviendas",
+            "atractivo": "Vivienda Modelo C",
             "longitud": -77.1336940278303,
             "latitud": -1.01421831277141,
             "altura": 283,
             "provincia": "Napo",
             "ciudad": "Keweriono",
+            "presupuesto": "$ 68.000",
             "sector": "Casas",
             "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
             "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
-            "imagen": "casa1.jpeg",
+            "imagen": "casaC1.jpeg",
             "link": "https://riobamba.com.ec/es-ec/chimborazo/riobamba/parques-plazas/parque-maldonado-a9ae6db5a"
         }, {
             "id": 17,
@@ -218,26 +203,49 @@
                 "pitch": 0,
                 "roll": 0
             },
-            "atractivo": "Viviendas",
+            "atractivo": "Vivienda Modelo C",
             "longitud": -77.1336940278303,
             "latitud": -1.01421831277141,
             "altura": 373,
             "provincia": "Napo",
             "ciudad": "Keweriono",
+            "presupuesto": "$ 68.000",
             "sector": "Esta ubicada en las calles José Veloz y 5 de Junio, en pleno Centro Histórico de Riobamba",
             "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
             "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
-            "imagen": "rio-catedral.png",
+            "imagen": "casaC2.jpeg",
+            "link": "https://www.goraymi.com/es-ec/chimborazo/riobamba/iglesias-templos/catedral-riobamba-a8fe075a2"
+        },
+        {
+            "id": 19,
+            "model": {
+                "url": "ONGUIMENO.glb",
+                "scale": 1,
+                "heading": 180,
+                "pitch": 0,
+                "roll": 0
+            },
+            "atractivo": "Vivienda Modelo C",
+            "longitud": -77.1336940278303,
+            "latitud": -1.01421831277141,
+            "altura": 373,
+            "provincia": "Napo",
+            "ciudad": "Keweriono",
+            "presupuesto": "$ 68.000",
+            "sector": "Esta ubicada en las calles José Veloz y 5 de Junio, en pleno Centro Histórico de Riobamba",
+            "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+            "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+            "imagen": "casaC3.jpeg",
             "link": "https://www.goraymi.com/es-ec/chimborazo/riobamba/iglesias-templos/catedral-riobamba-a8fe075a2"
         }]
     }, {
-        "nombre": "Comunidad X",
-        "slug": "comunidad",
-        "ruta": "PROYECTOS DE COMUNIDAD",
+        "nombre": "Onguimeno",
+        "slug": "onguimeno",
+        "ruta": "Comunidad de Onguimeno",
         "imagen": "banos-manto-de-la-novia.png",
         "beneficiados": 500,
-        "longitud": -77.0157148,
-        "latitud": -1.0194293,
+        "longitud": -77.02020161386275,
+        "latitud": -1.0105574559949042,
         "altura": 1750,
         "orientacion": {
             "heading": 280,
@@ -245,85 +253,153 @@
             "roll": 0
         },
         "atractivos": [{
-            "id": 1,
-            "model": {
-                "url": "waterfall.glb",
-                "scale": 1,
-                "heading": 135,
-                "pitch": 90,
-                "roll": 0
+                "id": 105,
+                "model": {
+                    "url": "ONGUIMENO.glb",
+                    "scale": 1,
+                    "heading": 180,
+                    "pitch": 0,
+                    "roll": 0
+                },
+                "atractivo": "Vivienda Modelo A",
+                "longitud": -77.0157148,
+                "latitud": -1.0194293,
+                "altura": 289,
+                "provincia": "Napo",
+                "ciudad": "Nenkipare",
+                "presupuesto": "$ 0",
+                "sector": "Casas",
+                "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "imagen": "casaA1.jpeg",
+                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-nuestra-senora-salto-a88796a99"
             },
-            "atractivo": "La cascada de Agoyan",
-            "longitud": -78.2982729,
-            "latitud": -1.4041285,
-            "altura": 1800,
-            "provincia": "Tungurahua",
-            "ciudad": "Baños",
-            "sector": "Parroquia de Ulba",
-            "descripcion": "Esta cascada es un antiguo símbolo de la zona debido a que se forma de las aguas del río Pastaza el mismo que cae a unos 40 metros, brindando a sus visitantes un gran espectáculo natural. La fuerza de esta caída ha disminuido ya que las aguas de este río han sido empleadas por el Proyecto Hidroeléctrico Agoyán. En el recorrido para observar esta cascada, primero se encontrará con la Represa Hidroeléctrica Agoyán, en donde se forma una laguna artificial debido a que las compuertas de la represa están cerradas, pero cuando son abiertas brindan un gran espectáculo a visitantes, forma parte de la Ruta de las Cascadas de Baños de Agua Santa. Túneles: Junto a los túneles de ingreso a la Amazonía, encontramos este hermoso atractivo del desarrollo turístico. Represa del Agoyán: Se encuentra a 6 km de Baños. Es uno de los más importantes proyectos hidroeléctricos junto al de Paute Pisayambo, con los cuales forma parte del Sistema interconectado del país. Utiliza las aguas del río Pastaza mediante la represa de hormigón, que se encuentra 15 km aguas arriba de la cascada del Agoyán. La casa de máquinas queda a unos 8 metros de la cascada. Cascada Puerta del Cielo: Se halla a 1 km de los túneles de Agoyán, vía Baños-Puyo. Es muy admirada ya que sus aguas caen justo a la carretera donde transmiten autos, bicicletas, donde la gente disfruta de un hermoso y refrescante baño, es la más alta de los Andes ecuatorianos, a 7 km del centro de Baños.",
-            "resumen": "Esta cascada es un antiguo símbolo de la zona debido a que se forma de las aguas del río Pastaza el mismo que cae a unos 40 metros, brindando a sus visitantes un gran espectáculo natural, en todo este recorrido se podrá observar la represa eléctrica",
-            "imagen": "banos-cascada-agoyan.png",
-            "link": "https://www.goraymi.com/es-ec/tungurahua/banos-de-agua-santa/cascadas/cascada-agoyan-anye1mszv"
-        }, {
-            "id": 2,
-            "model": {
-                "url": "waterfall.glb",
-                "scale": 0.5,
-                "heading": 135,
-                "pitch": 90,
-                "roll": 0
+            {
+                "id": 106,
+                "model": {
+                    "url": "ONGUIMENO.glb",
+                    "scale": 1,
+                    "heading": 180,
+                    "pitch": 0,
+                    "roll": 0
+                },
+                "atractivo": "Vivienda Modelo A",
+                "longitud": -77.0158548,
+                "latitud": -1.0194293,
+                "altura": 289,
+                "provincia": "Napo",
+                "ciudad": "Nenkipare",
+                "presupuesto": "$ 0",
+                "sector": "Casas",
+                "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "imagen": "casaA2.jpeg",
+                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-nuestra-senora-salto-a88796a99"
             },
-            "atractivo": "Manto de La novia",
-            "longitud": -78.4243416,
-            "latitud": -1.3983206,
-            "altura": 1750,
-            "provincia": "Tungurahua",
-            "ciudad": "Baños",
-            "sector": "La merced",
-            "descripcion": "Terminado su recorrido, esta cascada desemboca en el río Pastaza. Su nombre se debe a la dimensión que tiene, pero sobre todo a su color blanco que se asemeja al Velo de una Novia. Si prefiere puede bajar a mirarla más de cerca por un sendero que está a la vista para luego cruzar un puente colgante de más de 100 m de longitud que está sobre el río Pastaza, hasta llegar al pie de esta maravillosa cascada en donde se puede bañar, tomar fotografías y admirar el maravilloso paisaje. La cascada está dentro de la zona de amortiguamiento del Parque Nacional Llanganates, está en un área fuertemente colinada que desciende desde el Tungurahua a través de un estrecho valle, el cual termina abruptamente sobre el río Pastaza. Tarabita: La tarabita conduce a los turistas al otro lado del río Pastaza y presenciar de cerca la hermosa formación natural llamada Manto de la Novia. También se puede llegar a través de un sendero serpenteante; luego de 10 minutos de caminata se cruza un puente colgante y finalmente presenciar desde abajo la caída del agua. Puente Manto de Novia: Se encuentra ubicado sobre el río Pastaza, en el caserío Chinchín cerca de la cascada el Manto de la Novia. Sendero de los Contrabandistas: Este sendero tiene mucha historia, ya que en la antigüedad los contrabandistas de licor de caña que se producía en el Puyo, circulaban por este camino para huir de los guardas de estancos con quienes en ocasiones tenían enfrentamientos armados.",
-            "resumen": "Su nombre se debe a la dimensión que tiene, pero sobre todo a su color blanco que se asemeja al Velo de una Novia. Si prefiere puede bajar a mirarla más de cerca por un sendero que está a la vista para luego cruzar un puente colgante de más de 100 m ",
-            "imagen": "banos-manto-de-la-novia.png",
-            "link": "https://www.goraymi.com/es-ec/tungurahua/banos-de-agua-santa/cascadas/cascada-manto-novia-a2mq79x7z"
-        }, {
-            "id": 3,
-            "model": {
-                "url": "pin.glb",
-                "scale": 20,
-                "heading": 135,
-                "pitch": 90,
-                "roll": 0
+            {
+                "id": 107,
+                "model": {
+                    "url": "ONGUIMENO.glb",
+                    "scale": 1,
+                    "heading": 180,
+                    "pitch": 0,
+                    "roll": 0
+                },
+                "atractivo": "Vivienda Modelo A",
+                "longitud": -77.0158548,
+                "latitud": -1.0194293,
+                "altura": 289,
+                "provincia": "Napo",
+                "ciudad": "Nenkipare",
+                "presupuesto": "$ 0",
+                "sector": "Casas",
+                "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "imagen": "casaA3.jpeg",
+                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-nuestra-senora-salto-a88796a99"
+            }]
+    },
+    {
+        "nombre": "Dayuma",
+        "slug": "dayuma",
+        "ruta": "Comunidad de Dayuma",
+        "imagen": "banos-manto-de-la-novia.png",
+        "beneficiados": 500,
+        "longitud": -77.02020161386275,
+        "latitud": -1.0105574559949042,
+        "altura": 1750,
+        "orientacion": {
+            "heading": 280,
+            "pitch": -35,
+            "roll": 0
+        },
+        "atractivos": [
+            {
+                "id": 125,
+                "model": {
+                    "url": "ONGUIMENO.glb",
+                    "scale": 1,
+                    "heading": 180,
+                    "pitch": 0,
+                    "roll": 0
+                },
+                "atractivo": "Vivienda Modelo A",
+                "longitud": -77.0157148,
+                "latitud": -1.0194293,
+                "altura": 289,
+                "provincia": "Napo",
+                "ciudad": "Nenkipare",
+                "presupuesto": "$ 0",
+                "sector": "Casas",
+                "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "imagen": "casaB1.jpeg",
+                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-nuestra-senora-salto-a88796a99"
             },
-            "atractivo": "Pailón del Diablo",
-            "longitud": -78.4329268,
-            "latitud": -1.399263,
-            "altura": 1910,
-            "provincia": "Tungurahua",
-            "ciudad": "Baños",
-            "sector": "Rio verde",
-            "descripcion": "También conocida como Cascada de Río Verde, ya que es formada por el Rio Verde que tiene origen en los páramos de Los LLanganates. El agua es cristalina verdosa por los nutrientes naturales existentes, este río desemboca en el Río Pastaza al finalizar la cascada Pailón del Diablo. La temperatura del agua es de aproximadamente unos 23 ºC. Uno de los sitios turísticos más bellos en Baños de Agua Santa es el Pailón del Diablo que fue considerado por Yahoo en la lista de escaleras más fascinantes del mundo. Tanto para turistas nacionales como extranjeros esta es la cascada más impresionante de la región. Para visitarla solamente se necesita viajar por la carretera Baños - Puyo hasta la parroquia Río Verde. Es uno de los saltos más grandes del Ecuador con aproximadamente 80 metros de altura. Para observarla más de cerca debe descender por un sendero que se encuentra perfectamente señalizado, que a través de orquídeas, hortensias y vegetación semi-selvática, que llega hasta un puente colgante y luego se encontrará en el filo mismo de la cascada. En el borde de la cascada existe un mirador, desde donde la vista se pierde en la cubierta vegetal compuesta y bien representada en tres estratos: herbáceo, arbustivo y arbóreo. La cascada desciende a lo largo de una formación rocosa natural, la misma que es capaz de envolver en una densa nube de gotitas producto de la humedad. El nombre de “Pailón del Diablo”, se debe a la forma que tiene una roca de la cascada, haciéndola única.",
-            "resumen": "Es conocida como Cascada de Río Verde, ya que es formada por el Rio Verde que tiene origen en los páramos de Los LLanganates. El agua es cristalina verdosa por los nutrientes este río desemboca en el Río Pastaza al finalizar la cascada Pailón del Diablo. ",
-            "imagen": "banos-pailon-del-diablo.png",
-            "link": "https://www.goraymi.com/es-ec/tungurahua/banos-de-agua-santa/cascadas/pailon-diablo-a8e036996"
-        }, {
-            "id": 4,
-            "model": {
-                "url": "pin.glb",
-                "scale": 20,
-                "heading": 135,
-                "pitch": 90,
-                "roll": 0
+            {
+                "id": 126,
+                "model": {
+                    "url": "ONGUIMENO.glb",
+                    "scale": 1,
+                    "heading": 180,
+                    "pitch": 0,
+                    "roll": 0
+                },
+                "atractivo": "Vivienda Modelo A",
+                "longitud": -77.0158548,
+                "latitud": -1.0194293,
+                "altura": 289,
+                "provincia": "Napo",
+                "ciudad": "Nenkipare",
+                "presupuesto": "$ 0",
+                "sector": "Casas",
+                "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "imagen": "casaB2.jpeg",
+                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-nuestra-senora-salto-a88796a99"
             },
-            "atractivo": "Cascada de la virgen",
-            "longitud": -78.4174975,
-            "latitud": -1.3991067,
-            "altura": 1861,
-            "provincia": "Tungurahua",
-            "ciudad": "Baños",
-            "sector": "Centro de la Urbe de Baños",
-            "descripcion": "En este hermoso paraje, podemos degustar de aguas termales, como nace (no piscina) la llegada de torcazas en bandadas, plantas nativas y lo más importante conocer el lugar donde se apareció la santísima virgen de la cascada. La comunidad está en ceja de páramo sus aguas están a 10 grados de temperatura y se las utiliza como relajante nervioso en combinación con las termas que nacen a su costado. Es un paraje en el cual podemos disfrutar del frío andino con pajonales, montes propios del lugar, y el calor de la gente.  En la cascada se hace las peregrinaciones a la santísima virgen de la cascada. En este lugar podemos apreciar algunas especies de: arrayanes, yahuachi, yaluman, suros, helechos, hualicón, chilcas, falso laurel, yalte negro, cedro, encino, hoja blanca, guandera, colca, guayusa de monte, amarillo, motilón, porotón, entre otras especies. Aves: torcazas, gavilanes, tangaras, pava andina, loro alibronceado, cuco ardilla, lechuza, estrella coliblanca, inca pardo, carpinterito ventriamarillo, pinchaflor flanquiblanco, eufonia ventriblanca, piranga aliblanca, jilguero encapuchado, entre otras. Mamíferos: ratón de monte, guatusa negra, zorro de balsa, puerco espín, conejo de monte, cabeza de mate (eira barbara), tejón y mapache. Finca Bellavista: Es una propiedad que esta junto a la cabecera parroquia de Buenos aires, donde tenemos una casa para albergue, y comedor (casa azul) el terreno es con una pendiente pronunciada hay árboles nativos los cuales sirven de habitad para una gran variedad de orquídeas hay tres descansos en donde se puede hacer camping, este hermoso paraje, podemos degustar de aguas termales únicas del lugar.",
-            "resumen": "En este hermoso paraje, podemos degustar de aguas termales, como nace (no piscina) la llegada de torcazas en bandadas, plantas nativas y lo más importante conocer el lugar donde se apareció la santísima virgen de la cascada sus aguas están a 10° ",
-            "imagen": "banos-cascada-de-la-virgen.png",
-            "link": "https://www.goraymi.com/es-ec/tungurahua/banos-de-agua-santa/cascadas/cascada-virgen-a09dbb9d5"
-        }]
+            {
+                "id": 127,
+                "model": {
+                    "url": "ONGUIMENO.glb",
+                    "scale": 1,
+                    "heading": 180,
+                    "pitch": 0,
+                    "roll": 0
+                },
+                "atractivo": "Vivienda Modelo A",
+                "longitud": -77.0158548,
+                "latitud": -1.0194293,
+                "altura": 289,
+                "provincia": "Napo",
+                "ciudad": "Nenkipare",
+                "presupuesto": "$ 0",
+                "sector": "Casas",
+                "descripcion": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "resumen": "Para darles una mejor calidad de vida a los habitantes se ha propueso construir unas viviendas, tratando de alternar lo típico y lo moderno",
+                "imagen": "casaB3.jpeg",
+                "link": "https://www.goraymi.com/es-ec/cotopaxi/latacunga/iglesias-templos/iglesia-nuestra-senora-salto-a88796a99"
+            }
+        ]
     }]
 }
