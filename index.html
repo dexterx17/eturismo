@@ -36,12 +36,18 @@
 <body>
     <main role="main" id="main">
         <!-- Button trigger modal -->
-        <button type="button" class="fixed-top btn btn-primary" data-toggle="modal" data-target="#bienvenida">
-            Bienvenida
-        </button>
+        <div class="fixed-top">
+            <button type="button" @click="showSidebar = !showSidebar" class="ml-1 mt-1">
+                <i class="fa fa-bars"></i>
+            </button>
+            <button type="button" class=" btn btn-primary" data-toggle="modal" data-target="#bienvenida">
+                Menu Principal
+            </button>
+        </div>
         <div id="cesiumContainer"></div>
 
-        <div class="accordion" id="accordionExample">
+        <!-- Left sidebar -->
+        <div class="accordion" v-if="showSidebar" id="accordionExample">
             <div class="card" v-for="destino in destinosList">
                 <div class="card-header" :id="'heading-'+destino.slug">
                     <h2 class="mb-0">
@@ -151,7 +157,7 @@
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Bienvenido a Construyendo Sueños</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Bienvenido al visor de mapas 3D de Construyendo Sueños</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -159,14 +165,14 @@
                     <div class="modal-body">
                         <ul class="nav nav-tabs  nav-pills nav-justified" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="latacunga" aria-selected="true">Inicio</a>
+                                <a class="nav-link" :class="activeTab == 'home' ? 'active' : ''"  @click="activeTab='home'" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="latacunga" aria-selected="true">Inicio</a>
                             </li>
                             <li class="nav-item" role="presentation" v-for="destino in destinosList">
-                                <a class="nav-link" :id="destino.slug+'-tab'" data-toggle="tab" :href="'#'+destino.slug" role="tab" :aria-controls="destino.slug" aria-selected="false" v-text="destino.nombre">Latacunga</a>
+                                <a class="nav-link" :class="activeTab == destino.slug ? 'active' : ''" @click="activeTab=destino.slug" :id="destino.slug+'-tab'" data-toggle="tab" :href="'#'+destino.slug" role="tab" :aria-controls="destino.slug" aria-selected="false" v-text="destino.nombre">Latacunga</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade" :class="activeTab=='home'? 'show active' : ''" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="card">
                                     <div class="card-body" style="min-height:250px;">
                                         <div class="row">
@@ -183,8 +189,8 @@
                                                     <div class="col p-4 d-flex flex-column position-static">
                                                         <a :href="'#'+d.slug"  data-toggle="tab" class="d-inline-block mb-2 text-primary" v-text="d.nombre">World</a>
                                                         <h3 class="mb-0" v-text="d.ruta">Featured post</h3>
-                                                        <div class="mb-1 text-muted" v-text="d.atractivos.length+' proyectos'"># proyectos</div>
-                                                        <a class="btn btn-success" data-toggle="tab" :href="'#'+d.slug">Ver detalles</a>
+                                                        <div class="mb-1 text-muted" v-text="d.beneficiados+' beneficiados'"># beneficiados</div>
+                                                        <a class="btn btn-success" data-toggle="tab" @click="activeTab=d.slug"  :href="'#'+d.slug" v-text="'Ver '+d.atractivos.length+' proyectos'">Ver detalles</a>
                                                     </div>
                                                     <div class="col-auto d-none d-lg-block">
                                                         <img :src="'img/'+d.imagen" class="bd-placeholder-img" width="200" height="225" :alt="d.nombre">
@@ -197,7 +203,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" v-for="destino in destinosList" :id="destino.slug" role="tabpanel" :aria-labelledby="destino.slug+'-tab'">
+                            <div class="tab-pane fade" :class="activeTab==destino.slug? 'show active' : ''" v-for="destino in destinosList" :id="destino.slug" role="tabpanel" :aria-labelledby="destino.slug+'-tab'">
                                 <div class="card">
                                     <div class="card-header">
                                         <h2 class="text-center">

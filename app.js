@@ -14,7 +14,12 @@ const app = new Vue({
         viewer: null,
         pinBuilder: null,
         selectedEntity: null,
+        showSidebar: true,
+        activeTab:'home',
         debugID: 16,
+        //clock
+        start:0,
+        stop:0,
         //coordenadas mouse
         lat: 0,
         lng: 0,
@@ -64,8 +69,16 @@ const app = new Vue({
             Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1NGU0MzhiZS1jOWMxLTRmZDEtODk0ZS00NjE1NDkzNTM2YWIiLCJpZCI6ODMzLCJpYXQiOjE1MjU5ODE3Mjd9.Wi5bheKDoVv0FU8HHgnf5w4XOjke2pXQFTlEBu27E-Q';
             this.viewer = new Cesium.Viewer('cesiumContainer', {
                 terrainProvider: Cesium.createWorldTerrain(),
-                timeline: false
+                timeline: false,
+                shouldAnimate: true, // Enable animations
             });
+
+            //Enable lighting based on the sun position
+            this.viewer.scene.globe.enableLighting = true;
+
+            //Enable depth testing so things behind the terrain disappear.
+            this.viewer.scene.globe.depthTestAgainstTerrain = true;
+
 
             this.pinBuilder = new Cesium.PinBuilder();
 
@@ -73,6 +86,68 @@ const app = new Vue({
                 latitude: -1.26037,
                 longitude: -78.615184
             };
+
+
+            //Set the random number seed for consistent results.
+            Cesium.Math.setRandomNumberSeed(3);
+
+            //Set bounds of our simulation time
+            this.start = Cesium.JulianDate.fromDate(new Date(2023, 3, 29, 16));
+            this.stop = Cesium.JulianDate.addSeconds(
+                this.start,
+                360,
+                new Cesium.JulianDate()
+            );
+
+            //Make sure viewer is at the desired time.
+            this.viewer.clock.startTime = this.start.clone();
+            this.viewer.clock.stopTime = this.stop.clone();
+            this.viewer.clock.currentTime = this.start.clone();
+            this.viewer.clock.clockRange = Cesium.ClockRange.LOOP_STOP; //Loop at the end
+            this.viewer.clock.multiplier = 10;
+
+
+            //Compute the entity position property.
+            const position = this.computePathFlight(-77.011694584096, -1.02219706401149, 0.005);
+
+            //Actually create the entity
+            const entity = this.viewer.entities.add({
+                //Set the entity availability to the same interval as the simulation time.
+                availability: new Cesium.TimeIntervalCollection([
+                    new Cesium.TimeInterval({
+                    start: this.start,
+                    stop: this.stop,
+                    }),
+                ]),
+
+                //Use our computed positions
+                position: position,
+
+                //Automatically compute orientation based on position movement.
+                orientation: new Cesium.VelocityOrientationProperty(position),
+
+                //Load the Cesium plane model to represent the entity
+                model: {
+                    uri: "models/Cesium_Air.glb",
+                    minimumPixelSize: 64,
+                },
+
+                //Show the path as a pink line sampled in 1 second increments.
+                path: {
+                    resolution: 1,
+                    material: new Cesium.PolylineGlowMaterialProperty({
+                    glowPower: 0.1,
+                    color: Cesium.Color.YELLOW,
+                    }),
+                    width: 10,
+                },
+            });
+
+            entity.position.setInterpolationOptions({
+                interpolationDegree: 5,
+                interpolationAlgorithm:
+                  Cesium.LagrangePolynomialApproximation,
+              });
 
         },
         loadPlaces: function () {
@@ -218,6 +293,7 @@ const app = new Vue({
             if (close) {
                 $('#bienvenida').modal('hide');
             }
+            this.showSidebar = false;
 
             this.viewer.camera.flyTo({
                 destination: Cesium.Cartesian3.fromDegrees(destino.longitud, destino.latitud, destino.altura),
@@ -247,6 +323,7 @@ const app = new Vue({
             if (close) {
                 $('#bienvenida').modal('hide');
             }
+            this.showSidebar = false;
             var me = this;
             var entidad = this.viewer.entities.getById(atractivo.id);
 
@@ -292,6 +369,36 @@ const app = new Vue({
             //entidad.billboard.image = this.pinBuilder.fromColor(Cesium.Color.ROYALBLUE, 48).toDataURL();
             entidad.model.scale = atractivo.model.scale;
             //entidad.model.color = Cesium.Color.CHARTREUSE;
+        },
+        computePathFlight(lon, lat, radius){
+            const property = new Cesium.SampledPositionProperty();
+            for (let i = 0; i <= 360; i += 45) {
+              const radians = Cesium.Math.toRadians(i);
+              const time = Cesium.JulianDate.addSeconds(
+                this.start,
+                i,
+                new Cesium.JulianDate()
+              );
+              const position = Cesium.Cartesian3.fromDegrees(
+                lon + radius * 1.5 * Math.cos(radians),
+                lat + radius * Math.sin(radians),
+                400
+                //(Cesium.Math.nextRandomNumber() * 400 - 300 ) +300
+              );
+              property.addSample(time, position);
+          
+              //Also create a point for each sample we generate.
+              this.viewer.entities.add({
+                position: position,
+                point: {
+                  pixelSize: 8,
+                  color: Cesium.Color.TRANSPARENT,
+                  outlineColor: Cesium.Color.YELLOW,
+                  outlineWidth: 3,
+                },
+              });
+            }
+            return property;
         }
     },
     mounted() {
