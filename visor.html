@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor Wao</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,
+        body{
+            background: blue;
+            overflow: hidden;
+        }
+
+        .webgl{
+            position: fixed;
+            top:0;
+            left: 0;
+            outline: none;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <canvas class="webgl"></canvas>
+
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.132.2/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.132.2/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module">
+    
+        import * as THREE from 'three';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 100 );
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xffffff, 0.5);
+        pointLight.position.x = 2;
+        pointLight.position.y = 3;
+        pointLight.position.z = 4;
+        scene.add(pointLight);
+        
+        let canvas = document.querySelector('.webgl');
+
+        // Controls
+        const controls = new OrbitControls(camera, canvas);
+
+        // Axes helper
+        const axesHelper = new THREE.AxesHelper(2);
+        scene.add(axesHelper);
+
+        const renderer = new THREE.WebGLRenderer({
+            canvas
+        });
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+
+        const loader = new GLTFLoader();
+
+        let modelo = null;
+
+        loader.load( 'models/ONGUIMENO.glb', function ( gltf ) {
+            console.log('gltf', gltf);
+            modelo = gltf;
+
+            gltf.scene.position.x =0;
+            gltf.scene.position.y =0;
+            gltf.scene.position.z =20;
+            //gltf.scene.material.wireframe = true;
+
+            gltf.scene.scale.set(1,1,1)
+
+            scene.add( gltf.scene );
+            renderer.render( scene, camera );
+
+        }, undefined, function ( error ) {
+
+            console.error( 'error' );
+            console.error( error );
+
+        } );
+
+        camera.position.y = 6;
+        camera.position.z = 10;
+
+        const clock = new THREE.Clock();
+        function animate() {
+
+            // Time
+            const elapsedTime = clock.getElapsedTime();
+
+            if(modelo){
+                //camera.lookAt(new THREE.Vector3(2,2,-2))
+                //camera.position.x = Math.sin(elapsedTime) * 5
+                //modelo.scene.rotation.y = elapsedTime;
+                //modelo.scene.position.x += 0.01 * elapsedTime;
+            }
+            
+            renderer.render( scene, camera );
+            requestAnimationFrame( animate );
+        }
+
+        animate();
+    </script>
+</body>
+</html>

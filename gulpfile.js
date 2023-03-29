@@ -28,6 +28,14 @@ var
         out: dest + 'js/',
         filename: 'main.js'
     },
+    js2 = { in: [
+            'node_modules/three/build/three.min.js',
+            'node_modules/three/examples/jsm/controls/OrbitControls.js',
+            'front.js'
+        ],
+        out: dest + 'js/',
+        filename: 'front.js'
+    },
     syncOpts = {
         server: {
             baseDir: dest,
@@ -68,6 +76,28 @@ gulp.task('js', function() {
     }
 });
 
+//combina los javasript en uno
+gulp.task('js2', function() {
+    if (devBuild) {
+        return gulp.src(js2.in)
+            .pipe(size({ title: 'JS2 in' }))
+            .pipe(newer(js2.out))
+            .pipe(size({ title: 'JS2 out' }))
+            .pipe(gulp.dest(js2.out));
+    } else {
+        del([
+            dest + 'js/*'
+        ]);
+        return gulp.src(js2.in)
+            .pipe(deporder())
+            .pipe(size({ title: 'JS2 in' }))
+            .pipe(concat(js2.filename))
+            .pipe(size({ title: 'JS2 out' }))
+            .pipe(gulp.dest(js2.out));
+
+    }
+});
+
 // gulp.task('copy-img', function() {
 //     return gulp.src('./data.json')
 //       .pipe(gulp.dest('./deploy/imgs'));
@@ -79,5 +109,6 @@ gulp.task('browsersync', function() {
 
 gulp.watch(css.watch, gulp.series(['sass']));
 gulp.watch(js.in, gulp.series(['js']));
+gulp.watch(js2.in, gulp.series(['js2']));
 
-gulp.task('default', gulp.series(['sass', 'js']));
+gulp.task('default', gulp.series(['sass', 'js', 'js2']));

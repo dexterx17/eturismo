@@ -48,6 +48,7 @@
         "popper.js": "^1.16.1",
         "save-dev": "0.0.1-security",
         "sweetalert": "^2.1.2",
+        "three": "^0.150.1",
         "vue": "^2.6.12",
         "vue-3d-loader": "^2.1.5"
     },

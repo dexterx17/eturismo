@@ -1,9 +1,9 @@
 const app = new Vue({
     el: '#main',
     data: {
-        baseUrl: 'http://localhost:3001/',
+        //baseUrl: 'http://localhost:3000/',
         //baseUrl: 'http://eturismo.local/',
-        //baseUrl: 'http://wao.santana.ec/',
+        baseUrl: 'http://wao.santana.ec/',
         data_url: 'data.json',
         data: {},
         destinosList: [],
@@ -73,6 +73,8 @@ const app = new Vue({
                 timeline: false,
                 shouldAnimate: true, // Enable animations
             });
+            var baseLayerPickerViewModel = this.viewer.baseLayerPicker.viewModel;
+            baseLayerPickerViewModel.selectedImagery = baseLayerPickerViewModel.imageryProviderViewModels[1];
 
             //Enable lighting based on the sun position
             this.viewer.scene.globe.enableLighting = true;
@@ -307,7 +309,13 @@ const app = new Vue({
                 complete: function () {
                     swal({
                         title: destino.ruta,
-                        text: "Bienvenido a " + destino.nombre + '.',
+                        html: true,
+                        content: {
+                            element: 'div',
+                            attributes: {
+                                innerHTML: "Proyectos de vivienda en " + destino.nombre + '.<br><small>Por favor espera que el mapa se cargue completamente...</small>',
+                            },
+                        },
                         button: "Explorar",
                     });
                 }
